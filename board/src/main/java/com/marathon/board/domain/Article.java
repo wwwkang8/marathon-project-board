@@ -33,8 +33,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
     @Index(columnList="createdBy")
 })
 @Entity
-@EntityListeners(AuditingEntityListener.class)
-public class Article {
+
+public class Article extends AuditingFields {
 
   //본문 인덱스 : 본문검색에는 인덱스를 걸지 않는다. 너무 길어서 본문에는 인덱스 X. 그리고 인덱스에 용량이 한계가 있다.
   @Id
@@ -65,22 +65,7 @@ public class Article {
   private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
-  /** JPA Auditing 기능 : 날짜 일시가 자동으로 세팅되는 기능
-     JpaConfig에 @EnableAuditing 어노테이션을 설정
-     AuditAware을 사용해서 수정, 생성자가 자동으로 저장된다
-   */
-  @CreatedDate
-  @Column(nullable = false)
-  private LocalDateTime createdAt; // 생성일시
-  @CreatedBy
-  @Column(nullable = false, length = 100)
-  private String createdBy; // 생성자
-  @LastModifiedDate
-  @Column(nullable = false)
-  private LocalDateTime modifiedAt; // 수정일시
-  @LastModifiedBy
-  @Column(nullable = false, length = 100)
-  private String modifiedBy; // 수정자
+
 
   protected Article (){
 
