@@ -29,6 +29,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
     @Index(columnList="createdAt"),
     @Index(columnList="createdBy")
 })
+@EntityListeners(AuditingEntityListener.class)
 public class ArticleComment extends AuditingFields {
 
   @Id

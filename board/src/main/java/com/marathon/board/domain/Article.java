@@ -33,13 +33,14 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
     @Index(columnList="createdBy")
 })
 @Entity
-
 public class Article extends AuditingFields {
 
   //본문 인덱스 : 본문검색에는 인덱스를 걸지 않는다. 너무 길어서 본문에는 인덱스 X. 그리고 인덱스에 용량이 한계가 있다.
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
+
+
   @Setter
   @Column(nullable = false)
   private String title; // 제목
@@ -63,8 +64,6 @@ public class Article extends AuditingFields {
    * */
   @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
   private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
-
-
 
 
   protected Article (){
