@@ -18,6 +18,8 @@ repositories {
 	mavenCentral()
 }
 
+print(dependencyManagement)
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -31,8 +33,41 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 	runtimeOnly 'com.mysql:mysql-connector-j'
 
+
+	// queryDSL 설정
+	// 해결 블로그 : https://l4279625.tistory.com/146
+	implementation "com.querydsl:querydsl-jpa:5.0.0:jakarta"
+	implementation "com.querydsl:querydsl-core"
+	implementation "com.querydsl:querydsl-collections"
+	annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta" // querydsl JPAAnnotationProcessor 사용 지정
+	annotationProcessor "jakarta.annotation:jakarta.annotation-api" // java.lang.NoClassDefFoundError (javax.annotation.Generated) 대응 코드
+	annotationProcessor "jakarta.persistence:jakarta.persistence-api" // java.lang.NoClassDefFoundError (javax.annotation.Entity) 대응 코드
+
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
+}
+
+/** Q클래스는 보통 빌드 폴더에 생성된다. 근데 왜 generated 폴더에 가져오나? 어떤 IDE를 사용해서 빌드할 때 발생하는 에러를 방지하기 위해서.
+ Gradle 빌드 도구가 스캔하는 영역과 IDE가 스캔하는 영역에 차이가 있다. 스캔을 두 곳에서 하다보니까 중복 생성되어 충돌.
+ 그래서 강제로 generated 폴더로 강제로 설정.
+ */
+// Querydsl 설정부
+def generated = 'src/main/generated'
+
+// querydsl QClass 파일 생성 위치를 지정
+tasks.withType(JavaCompile) {
+	options.getGeneratedSourceOutputDirectory().set(file(generated))
+}
+
+
+// java source set 에 querydsl QClass 위치 추가
+sourceSets {
+	main.java.srcDirs += [ generated ]
+}
+
+// gradle clean 시에 QClass 디렉토리 삭제
+clean {
+	delete file(generated)
 }
