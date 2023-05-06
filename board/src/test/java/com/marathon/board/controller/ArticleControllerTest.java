@@ -40,7 +40,6 @@ class ArticleControllerTest {
     }
 
     @DisplayName("[view][GET] 게시글 상세 페이지 - 정상 호출")
-    @Disabled
     @Test
     public void given_whenRequestingArticleView_thenReturnArticleView() throws Exception {
         //Given
@@ -55,7 +54,6 @@ class ArticleControllerTest {
     }
 
     @DisplayName("[view][GET] 게시글 검색전용페이지 - 정상 호출")
-    @Disabled
     @Test
     public void given_whenRequestingArticleSearchView_thenReturnArticleSearchView() throws Exception {
         //Given
@@ -68,7 +66,6 @@ class ArticleControllerTest {
     }
 
     @DisplayName("[view][GET] 게시글 해시태그 검색페이지 - 정상 호출")
-    @Disabled
     @Test
     public void given_whenRequestingArticleHashtagSearchView_thenReturnArticleHashtagSearchView() throws Exception {
         //Given
