@@ -20,7 +20,7 @@ public class ArticleController {
     @GetMapping("/{articleId}")
     public String article(ModelMap map){
         map.addAttribute("article", "article");
-        map.addAttribute("articleComments", List.of());
+        map.addAttribute("articleComments", null);
 
         return "articles/detail";
     }
