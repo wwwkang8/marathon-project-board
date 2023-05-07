@@ -16,7 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 @DisplayName("인증 컨트롤러")
-@Import(SecurityConfig.class) 
+@Import(SecurityConfig.class)
 @WebMvcTest
 public class AuthControllerTest {
 
