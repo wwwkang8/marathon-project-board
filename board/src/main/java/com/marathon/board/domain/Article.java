@@ -13,7 +13,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OrderBy;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,7 +27,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Getter
-@ToString
+@ToString(callSuper = true)
 @Table(indexes = {
     @Index(columnList="title"),
     @Index(columnList="hashtag"),
@@ -40,6 +42,7 @@ public class Article extends AuditingFields {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
+  @Setter @ManyToOne(optional = false) private UserAccount userAccount; // 유저 정보 (ID)
 
   @Setter
   @Column(nullable = false)
@@ -63,6 +66,7 @@ public class Article extends AuditingFields {
    * Article에서 지우는게 맞다. 한쪽만 지우면 된다.
    * */
   @OneToMany(mappedBy = "article", cascade = CascadeType.ALL)
+  @OrderBy("createdAt DESC")
   private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
 
@@ -70,14 +74,15 @@ public class Article extends AuditingFields {
 
   }
 
-  private Article(String title, String content, String hashTag) {
+  private Article(UserAccount userAccount, String title, String content, String hashtag) {
+    this.userAccount = userAccount;
     this.title = title;
     this.content = content;
     this.hashTag = hashTag;
   }
 
-  public static Article of(String title, String content, String hashTag) {
-    return new Article(title, content, hashTag);
+  public static Article of(UserAccount userAccount, String title, String content, String hashtag) {
+    return new Article(userAccount, title, content, hashtag);
   }
 
   @Override

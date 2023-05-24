@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.marathon.board.config.JpaConfig;
 import com.marathon.board.domain.Article;
+import com.marathon.board.domain.UserAccount;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -21,13 +22,16 @@ class JpaRepositoryTest {
 
     private final ArticleRepository articleRepository;
     private final ArticleCommentRepository articleCommentRepository;
+    private final UserAccountRepository userAccountRepository;
 
     public JpaRepositoryTest(
         @Autowired ArticleRepository articleRepository,
-        @Autowired ArticleCommentRepository articleCommentRepository
+        @Autowired ArticleCommentRepository articleCommentRepository,
+        @Autowired UserAccountRepository userAccountRepository
     ) {
       this.articleRepository = articleRepository;
       this.articleCommentRepository = articleCommentRepository;
+        this.userAccountRepository = userAccountRepository;
     }
 
     @DisplayName("Select Test")
@@ -35,17 +39,18 @@ class JpaRepositoryTest {
     void givenTestData_whenSelecting_thenWorksFine(){
         // Given
         long previousCount = articleRepository.count();
+        UserAccount userAccount = userAccountRepository.save(
+            UserAccount.of("uno", "pw", null, null, null));
+        Article article = Article.of(userAccount, "new article", "new content", "#spring");
 
 
         // When
-        List<Article> articles = articleRepository.findAll();
+        articleRepository.save(article);
 
 
 
         // Then
-        Assertions.assertThat(articles)
-            .isNotNull()
-            .hasSize(1);
+        assertThat(articleRepository.count()).isEqualTo(previousCount + 1);
     }
 
     @DisplayName("Insert Test")
@@ -53,10 +58,12 @@ class JpaRepositoryTest {
     void givenTestData_whenInserting_thenWorksFine(){
         // Given
         long previousCount = articleRepository.count();
+        UserAccount userAccount = userAccountRepository.save(UserAccount.of("uno", "pw", null, null, null));
+        Article article = Article.of(userAccount, "new article", "new content", "#spring");
 
 
         // When
-        Article savedArticles = articleRepository.save(Article.of("new article", "new content", "#hash"));
+        articleRepository.save(article);
 
 
         // Then
