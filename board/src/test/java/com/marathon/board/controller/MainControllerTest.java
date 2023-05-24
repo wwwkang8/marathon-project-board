@@ -3,19 +3,19 @@ package com.marathon.board.controller;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.marathon.board.config.SecurityConfig;
-import org.eclipse.jdt.internal.compiler.batch.Main;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @Import(SecurityConfig.class)
 @WebMvcTest(MainController.class)
-public class MainControllerTest {
+class MainControllerTest {
 
     private final MockMvc mvc;
 
@@ -24,14 +24,15 @@ public class MainControllerTest {
     }
 
     @Test
-    void givenNoting_WhenRequestingRootPage_thenRedirectsToArticlesPage() throws Exception {
-        //given
+    void givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage() throws Exception {
+        // Given
 
-        //when
+        // When & Then
         mvc.perform(get("/"))
-            .andExpect(status().is3xxRedirection());
-
-        //then
+            .andExpect(status().isOk())
+            .andExpect(view().name("forward:/articles"))
+            .andExpect(forwardedUrl("/articles"))
+            .andDo(MockMvcResultHandlers.print());
     }
 
 }
