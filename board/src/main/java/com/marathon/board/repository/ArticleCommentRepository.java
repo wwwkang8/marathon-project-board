@@ -1,5 +1,7 @@
 package com.marathon.board.repository;
 
+import java.util.List;
+
 import com.marathon.board.domain.Article;
 import com.marathon.board.domain.ArticleComment;
 import com.marathon.board.domain.QArticle;
@@ -18,8 +20,11 @@ public interface ArticleCommentRepository extends
     QuerydslPredicateExecutor<ArticleComment>,
     QuerydslBinderCustomizer<QArticleComment>
 {
+    List<ArticleComment> findByArticle_Id(Long articleId);
+
     @Override
     default void customize(QuerydslBindings bindings, QArticleComment root) {
+
         // 선택적으로 특정 필드에 대해서 검색 가능하게 하기 위한 장치
         bindings.excludeUnlistedProperties(true); //일단 검색에서 제외하도록 하고
         bindings.including(root.content, root.createdAt, root.modifiedAt); //이 필드들만 검색 대상

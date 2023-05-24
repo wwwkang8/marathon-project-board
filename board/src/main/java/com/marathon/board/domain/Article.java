@@ -78,7 +78,7 @@ public class Article extends AuditingFields {
     this.userAccount = userAccount;
     this.title = title;
     this.content = content;
-    this.hashTag = hashTag;
+    this.hashTag = hashtag;
   }
 
   public static Article of(UserAccount userAccount, String title, String content, String hashtag) {
