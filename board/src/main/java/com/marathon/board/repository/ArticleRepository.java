@@ -2,6 +2,7 @@ package com.marathon.board.repository;
 
 import com.marathon.board.domain.Article;
 import com.marathon.board.domain.QArticle;
+import com.marathon.board.domain.projection.ArticleProjection;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.SimpleExpression;
 import com.querydsl.core.types.dsl.StringExpression;
@@ -14,13 +15,21 @@ import org.springframework.data.querydsl.binding.QuerydslBinderCustomizer;
 import org.springframework.data.querydsl.binding.QuerydslBindings;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-@RepositoryRestResource
+@RepositoryRestResource(excerptProjection = ArticleProjection.class)
 public interface ArticleRepository extends
     JpaRepository<Article, Long> ,
     QuerydslPredicateExecutor<Article>,
     QuerydslBinderCustomizer<QArticle>
 {
-    Page<Article> findByTitle(String title, Pageable pageable);
+    Page<Article> findByTitleContaining(String title, Pageable pageable);
+
+    Page<Article> findByContentContaining(String content, Pageable pageable);
+
+    Page<Article> findByUserAccount_UserIdContaining(String userId, Pageable pageable);
+
+    Page<Article> findByUserAccount_NicknameContaining(String nickName, Pageable pageable);
+
+    Page<Article> findByHashTag(String hashtag, Pageable pageable);
     @Override
     default void customize(QuerydslBindings bindings, QArticle root) {
         // 선택적으로 특정 필드에 대해서 검색 가능하게 하기 위한 장치
