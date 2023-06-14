@@ -1,10 +1,14 @@
 package com.marathon.board.controller;
 
+import java.util.List;
+
 import com.marathon.board.domain.type.SearchType;
 import com.marathon.board.dto.response.ArticleResponse;
 import com.marathon.board.dto.response.ArticleWithCommentsResponse;
 import com.marathon.board.service.ArticleService;
+import com.marathon.board.service.PaginationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -21,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ArticleController {
 
     private final ArticleService articleService;
+    private final PaginationService paginationService;
 
 
     /**
@@ -43,7 +48,21 @@ public class ArticleController {
          * 함께 전달하는 방식으로 사용할 때 많이 쓴다. 주로 GET방식의 통신을 할 때 쓴다.
          * */
 
-        map.addAttribute("articles", articleService.searchArticles(searchType, searchValue, pageable).map(ArticleResponse::from));
+        /**
+        * from 메서드 : 도메인 객체를 데이터전송객체(DTO)로 변환하는 용도로 사용.
+        * articleService.searchArticles 메서드로 결과를 받아오고
+        * .map(ArticleResponse::from)을 사용해서 Article객체를 ArticleResponse 객체로 변환.
+        *
+        * Page 인터페이스는 페이지 관련 정보와 함께 특정페이지의 데이터를 가져오는 기능을 한다.
+         * 주요한 메서드로는 페이지번호, 페이지 크기 등이 있다.
+        * */
+        Page<ArticleResponse> articles = articleService.searchArticles(searchType, searchValue, pageable).map(ArticleResponse::from);
+        List<Integer> barNumbers = paginationService.getPaginationBarNumbers(pageable.getPageNumber(), articles.getTotalPages());
+
+        map.addAttribute("articles", articles);
+        map.addAttribute("paginationNumbers", barNumbers);
+
+
         return "articles/index";
     }
 
