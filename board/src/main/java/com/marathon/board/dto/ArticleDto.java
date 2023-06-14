@@ -38,6 +38,13 @@ public record ArticleDto(
         );
     }
 
+    /**
+     * toEntity 메서드 사용이유
+     * Article 엔티 객체를 생성해서 반환하는 메서드
+     * 장점
+     * 1) DTO -> Entity로 변환
+     * 2) 객체생성의 편의성 : 엔티티생성에 필요한 매개변수 강제할수 있다.
+     * */
     public Article toEntity() {
         return Article.of(
             userAccountDto.toEntity(),
