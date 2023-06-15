@@ -2,6 +2,7 @@ package com.marathon.board.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
@@ -12,6 +13,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 import com.marathon.board.config.SecurityConfig;
@@ -19,6 +21,7 @@ import com.marathon.board.domain.type.SearchType;
 import com.marathon.board.dto.ArticleWithCommentsDto;
 import com.marathon.board.dto.UserAccountDto;
 import com.marathon.board.service.ArticleService;
+import com.marathon.board.service.PaginationService;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -46,10 +49,35 @@ class ArticleControllerTest {
     @MockBean
     private ArticleService articleService;
 
+    @MockBean
+    private PaginationService paginationService;
+
 
     @DisplayName("[view][GET] 게시글 리스트 {게시판} 페이지 - 정상 호출")
     @Test
-    public void given_whenRequestingArticlesView_thenReturnArticlesView() throws Exception {
+    public void given_whenSearchingArticlesView_thenReturnArticlesView() throws Exception {
+        //Given
+        SearchType searchType=SearchType.TITLE;
+        String searchValue = "title";
+        given(articleService.searchArticles(eq(searchType), eq(searchValue), any(Pageable.class))).willReturn(Page.empty());
+        given(paginationService.getPaginationBarNumbers(anyInt(), anyInt())).willReturn(List.of(0,1,2,3,4));
+
+        //When & Then
+        mvc.perform(get("/articles")
+                .queryParam("searchType", searchType.name())
+                .queryParam("searchValue", searchValue)
+            )
+            .andExpect(status().isOk())
+            .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
+            .andExpect(view().name("articles/index"))
+            .andExpect(model().attributeExists("articles"))
+            .andExpect(model().attributeExists("searchTypes"));
+        then(articleService).should().searchArticles(eq(null), eq(null), any(Pageable.class));
+    }
+
+    @DisplayName("[view][GET] 게시글 리스트 {게시판} 페이지 - 검색어와 함께 호출")
+    @Test
+    public void givenSearchWord_whenRequestingArticlesView_thenReturnArticlesView() throws Exception {
         //Given
         given(articleService.searchArticles(eq(null), eq(null), any(Pageable.class))).willReturn(Page.empty());
 

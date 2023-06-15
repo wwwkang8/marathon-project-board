@@ -62,6 +62,10 @@ public class ArticleController {
         map.addAttribute("articles", articles);
         map.addAttribute("paginationNumbers", barNumbers);
 
+        /** SearchType ENUM값을 Values()로 배열 형태로 "searchTypes" 변수로 저장.
+         * 이것을 Thymeleaf 화면상에서 받아서 검색옵션으로 뿌려준다. */
+        map.addAttribute("searchTypes", SearchType.values());
+
 
         return "articles/index";
     }
