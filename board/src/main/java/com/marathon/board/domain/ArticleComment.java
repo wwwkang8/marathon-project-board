@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
@@ -42,6 +43,7 @@ public class ArticleComment extends AuditingFields {
 
   @Setter
   @ManyToOne(optional = false)
+  @JoinColumn( name = "userId") // JoinColumn을 사용하여 외래키(FK) 칼럼을 지정하고, 엔티티간의 관계를 설정
   private UserAccount userAccount; // 유저 정보 (ID)
 
   @Setter
