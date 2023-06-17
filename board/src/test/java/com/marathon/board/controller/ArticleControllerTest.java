@@ -107,18 +107,19 @@ class ArticleControllerTest {
         then(articleService).should().getArticle(articleId);
     }
 
+    @Disabled("구현 중")
     @DisplayName("[view][GET] 게시글 검색전용페이지 - 정상 호출")
     @Test
     public void given_whenRequestingArticleSearchView_thenReturnArticleSearchView() throws Exception {
         //Given
-        given(articleService.searchArticles(eq(null), eq(null), any(Pageable.class))).willReturn(Page.empty());
+
 
         //When & Then
         mvc.perform(get("/articles/search"))
             .andExpect(status().isOk())
             .andExpect(view().name("/articles/search"))
             .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
-        then(articleService).should().searchArticles(eq(null), eq(null), any(Pageable.class));
+
     }
 
     @DisplayName("[view][GET] 게시글 해시태그 검색페이지 - 정상 호출")

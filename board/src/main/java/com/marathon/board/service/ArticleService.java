@@ -91,6 +91,12 @@ public class ArticleService {
         return articleRepository.count();
     }
 
+    /**
+     * 목적 : 해시태그로 게시글들을 조회해 오는 메서드
+     * 1) 해시태그가 null이거나 공백인경우 빈 페이지를 리턴한다
+     * 2) findByHashTag : 해시태그를 사용해서 게시글들을 조회해온다.
+     * -> 이 때 Querydsl이 필요하다.
+     * */
     @Transactional(readOnly = true)
     public Page<ArticleDto> searchArticlesViaHashtag(String hashtag, Pageable pageable) {
 
@@ -102,6 +108,9 @@ public class ArticleService {
 
     }
 
+    /**
+     * 목적 : 해시태그들을 모두 조회하되, distinct하게 가져온다.
+     * */
     public List<String> getHashtags() {
 
         return articleRepository.findAllDistinctHashtags();
