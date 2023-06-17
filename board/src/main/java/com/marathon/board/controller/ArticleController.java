@@ -90,10 +90,21 @@ public class ArticleController {
         @PageableDefault(size = 10, sort = "createdAt", direction = Sort.Direction.DESC) Pageable pageable,
         ModelMap map
     ) {
+        /**
+         * 목적 : 해시태그를 조회해서 가져오는 메서드.
+         * searchArticlesViaHashtag() : ArticleService로부터 해시태그에 딸린 게시글 목록을 조회받는다.
+         * Pagination 처리
+         * getHashtags() : ArticleService로부터 해시태그 목록을 받아온다.
+         * */
+
         Page<ArticleResponse> articles = articleService.searchArticlesViaHashtag(searchValue, pageable).map(ArticleResponse::from);
         List<Integer> barNumbers = paginationService.getPaginationBarNumbers(pageable.getPageNumber(), articles.getTotalPages());
         List<String> hashtags = articleService.getHashtags();
 
+        /**
+         * View에 뿌려주기 위해서 model 객체에 ArticleService로부터 받아온
+         * 데이터들을 추가해주는 로직.
+         * */
         map.addAttribute("articles", articles);
         map.addAttribute("hashtags", hashtags);
         map.addAttribute("paginationBarNumbers", barNumbers);
