@@ -1,6 +1,8 @@
 package com.marathon.board.service;
 
 
+import java.util.List;
+
 import com.marathon.board.domain.Article;
 import com.marathon.board.domain.type.SearchType;
 import com.marathon.board.dto.ArticleDto;
@@ -89,4 +91,19 @@ public class ArticleService {
         return articleRepository.count();
     }
 
+    @Transactional(readOnly = true)
+    public Page<ArticleDto> searchArticlesViaHashtag(String hashtag, Pageable pageable) {
+
+        if(hashtag == null || hashtag.isBlank()){
+            return Page.empty(pageable); // 해시태그 없으면 빈페이지 보내준다.
+        }
+
+        return articleRepository.findByHashTag(hashtag, pageable).map(ArticleDto::from);
+
+    }
+
+    public List<String> getHashtags() {
+
+        return articleRepository.findAllDistinctHashtags();
+    }
 }

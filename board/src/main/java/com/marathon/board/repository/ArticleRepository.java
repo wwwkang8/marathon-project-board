@@ -3,6 +3,7 @@ package com.marathon.board.repository;
 import com.marathon.board.domain.Article;
 import com.marathon.board.domain.QArticle;
 import com.marathon.board.domain.projection.ArticleProjection;
+import com.marathon.board.repository.querydsl.ArticleRepositoryCustom;
 import com.querydsl.core.types.dsl.DateTimeExpression;
 import com.querydsl.core.types.dsl.SimpleExpression;
 import com.querydsl.core.types.dsl.StringExpression;
@@ -18,6 +19,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource(excerptProjection = ArticleProjection.class)
 public interface ArticleRepository extends
     JpaRepository<Article, Long> ,
+    ArticleRepositoryCustom,
     QuerydslPredicateExecutor<Article>,
     QuerydslBinderCustomizer<QArticle>
 {
