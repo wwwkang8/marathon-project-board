@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,14 +31,34 @@ import static org.mockito.BDDMockito.*;
 @ExtendWith(MockitoExtension.class)
 class ArticleServiceTest {
 
-    @InjectMocks private ArticleService sut;
+    /**
+     * BDD : 행위 주도 개발
+     * 테스트 대상의 상태변화 테스트를 하는 것.
+     * BDD 권장 행동패턴은 Given, When, Then
+     * */
 
+    /** Mock 객체를 생성하고 */
     @Mock private ArticleRepository articleRepository;
+
+    /** InjectMocks 어노테이션으로 ArticleService에 ArticleRepository Mock 객체를 주입한다. */
+    @InjectMocks private ArticleService sut;
 
     @DisplayName("검색어 없이 게시글을 검색하면, 게시글 페이지를 반환한다.")
     @Test
     void givenNoSearchParameters_whenSearchingArticles_thenReturnsArticlePage() {
-        // Given
+        // Given : 상태를 만든다
+        /**
+         * Given : 최초 상태, 출발점 설정.
+         * 페이지 설정은 20페이지를 보여질 수 있도록 상태설정.
+         * articleRepository.findAll() 했을 때 조회된 페이지가 나오도록 설정
+         *
+         * When : 어떤 상태의 변화를 가했을때. 즉 메서드를 실행했을 때
+         * ArticleService 객체에서 searchArticles 함수를 호출한다.(검색타입null, 검색어null, 최대20페이지)
+         *
+         * Then : 예상되는 결과는 이렇다.
+         * 1) 아무것도 조회되지 않는다. -> 애초에 given에서 아무것도 조회되지 않도록 했기 때문에.
+         * 2) then, should 함수의 사용 이유를 모르겠다.
+         * */
         Pageable pageable = Pageable.ofSize(20);
         given(articleRepository.findAll(pageable)).willReturn(Page.empty());
 
@@ -49,6 +70,17 @@ class ArticleServiceTest {
         then(articleRepository).should().findAll(pageable);
     }
 
+    /**
+     * Given : 최초 상태, 출발점 설정.
+     * 페이지 설정으 20페이지
+     * articleRepository에서 TitleContaining 함수로 조회할 때 페이지가 조회되도록 설정.
+     *
+     * When : 어떤 상태의 변화를 가했을때. 즉 메서드를 실행했을 때
+     * searchArticles()를 검색어, 검색타입을 이용해서 호출.
+     *
+     * Then : 예상되는 결과는 이렇다.
+     * 2) then, should 함수의 사용 이유를 모르겠다.
+     * */
     @DisplayName("검색어와 함께 게시글을 검색하면, 게시글 페이지를 반환한다.")
     @Test
     void givenSearchParameters_whenSearchingArticles_thenReturnsArticlePage() {
@@ -166,6 +198,54 @@ class ArticleServiceTest {
 
         // Then
         then(articleRepository).should().deleteById(articleId);
+    }
+
+    @DisplayName("검색어 없이 게시글을 해시태그 검색하면, 빈 페이지를 반환한다")
+    @Test
+    void givenNoSearchParameters_whenSearchingArticlesViaHashtag_thenReturnEmptyPage() {
+        // Given
+        Pageable pageable = Pageable.ofSize(20);
+
+
+        // When
+        Page<ArticleDto> articles = sut.searchArticlesViaHashtag(null, pageable);
+
+        // Then
+        assertThat(articles).isEqualTo(Page.empty(pageable));
+        then(articleRepository).shouldHaveNoInteractions();
+    }
+
+    @DisplayName("게시글을 해시태그 검색하면, 게시글 페이지를 반환한다.")
+    @Test
+    void givenHashtag_whenSearchingArticlesViaHashtag_thenReturnArticlePages() {
+        // Given
+        String hashtag = "#java";
+        Pageable pageable = Pageable.ofSize(20);
+        given(articleRepository.findByHashTag(hashtag, pageable)).willReturn(Page.empty(pageable));
+
+
+        // When
+        Page<ArticleDto> articles = sut.searchArticlesViaHashtag(hashtag, pageable);
+
+        // Then
+        assertThat(articles).isEqualTo(Page.empty(pageable));
+        then(articleRepository).should().findByHashTag(hashtag, pageable);
+    }
+
+    @DisplayName("해시태그를 조회하면, 유니크 해시태그 리스트를 반환한다.")
+    @Test
+    void givenNothing_whenCalling_thenReturnsHashtags() {
+        // Given : 주어진 상태
+        List<String> expectedHashtags = List.of("#java", "#spring", "#boot");
+        given(articleRepository.findAllDistinctHashtags()).willReturn(expectedHashtags);
+
+
+        // When : 테스트 대상의 행위로 인해 상태 변화가 가해지면
+        List<String> actualHashtags = sut.getHashtags();
+
+        // Then : 실행결과로서 기대하는 상태로 완료되어야함.
+        assertThat(actualHashtags).isEqualTo(expectedHashtags);
+        then(articleRepository).should().findAllDistinctHashtags();
     }
 
 

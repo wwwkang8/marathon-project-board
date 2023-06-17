@@ -14,14 +14,6 @@
             />
         </attr>
 
-        <attr sel="#search-type" th:remove="all-but-first">
-            <attr sel="option[0]"
-                    th:each="searchType : ${searchTypes}"
-            />
-
-        </attr>
-
-
         <attr sel="#search-value" th:value="${param.searchValue}" />
 
 
