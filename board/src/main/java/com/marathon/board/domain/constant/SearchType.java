@@ -1,4 +1,4 @@
-package com.marathon.board.domain.type;
+package com.marathon.board.domain.constant;
 
 import lombok.Getter;
 

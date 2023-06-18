@@ -4,10 +4,12 @@ package com.marathon.board.service;
 import java.util.List;
 
 import com.marathon.board.domain.Article;
-import com.marathon.board.domain.type.SearchType;
+import com.marathon.board.domain.UserAccount;
+import com.marathon.board.domain.constant.SearchType;
 import com.marathon.board.dto.ArticleDto;
 import com.marathon.board.dto.ArticleWithCommentsDto;
 import com.marathon.board.repository.ArticleRepository;
+import com.marathon.board.repository.UserAccountRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class ArticleService {
 
     private final ArticleRepository articleRepository;
+    private final UserAccountRepository userAccountRepository;
 
     @Transactional(readOnly = true)
     public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword, Pageable pageable) {
@@ -45,7 +48,7 @@ public class ArticleService {
     }
 
     @Transactional(readOnly = true)
-    public ArticleWithCommentsDto getArticle(Long articleId) {
+    public ArticleWithCommentsDto getArticleWithComments(Long articleId) {
 
         return articleRepository.findById(articleId)
                                 .map(ArticleWithCommentsDto::from)
@@ -53,14 +56,22 @@ public class ArticleService {
 
     }
 
-    public void saveArticle(ArticleDto dto) {
-        articleRepository.save(dto.toEntity());
+    @Transactional
+    public ArticleDto getArticle(Long articleId) {
+        return articleRepository.findById(articleId)
+                                .map(ArticleDto::from)
+                                .orElseThrow(()->new EntityNotFoundException("게시글이 없습니다 - articleId: " + articleId));
     }
 
-    public void updateArticle(ArticleDto dto) {
+    public void saveArticle(ArticleDto dto) {
+        UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
+        articleRepository.save(dto.toEntity(userAccount));
+    }
+
+    public void updateArticle(Long articleId, ArticleDto dto) {
 
         try{
-            Article article = articleRepository.getReferenceById(dto.id());
+            Article article = articleRepository.getReferenceById(articleId);
             if(dto.title() != null) {article.setTitle(dto.title());}
             // record의 스펙이다. dto.getTitle()이 아니라 .title()로 값 가져오기 가능.
             // java 13, 14에서 새로 나온 기능이다.get 이 없는 title을 볼 수 있다.
