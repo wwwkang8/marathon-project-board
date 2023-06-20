@@ -3,10 +3,13 @@ package com.marathon.board.service;
 
 import java.util.List;
 
+import com.marathon.board.domain.Article;
 import com.marathon.board.domain.ArticleComment;
+import com.marathon.board.domain.UserAccount;
 import com.marathon.board.dto.ArticleCommentDto;
 import com.marathon.board.repository.ArticleCommentRepository;
 import com.marathon.board.repository.ArticleRepository;
+import com.marathon.board.repository.UserAccountRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +23,7 @@ public class ArticleCommentService {
 
     private final ArticleRepository articleRepository;
     private final ArticleCommentRepository articleCommentRepository;
+    private final UserAccountRepository userAccountRepository;
 
     /**
      * 함수용도 : articleId로 조회된 ArticleComment 엔티티들을 ArticleCommentDto 객체로 변환한 후에
@@ -36,8 +40,20 @@ public class ArticleCommentService {
 
     public void saveArticleComment(ArticleCommentDto dto) {
 
+        /**
+         * 사용목적 : 댓글을 저장하는 메서드
+         * ArticleCommentDto의 toEntity함수로 ArticleComment 도메인으로 저장.
+         *
+         * getReferenceById : 엔티티를 지연로으로 가져오기 위해서 사용된다.
+         * 이 메서드는 실제로 엔티티 인스턴스를 가져오지 않고, 엔티티의 프록시를 반환한다.
+         * 이 프록시는 필요한 경우에만 엔티티를 로딩하여 성능 최적화 가능.
+         * */
+
         try{
-            articleCommentRepository.save(dto.toEntity(articleRepository.getReferenceById(dto.articleId())));
+            Article article = articleRepository.getReferenceById(dto.articleId());
+            UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
+            //댓글 생성시 게시글ID와 작성자 정보도 필요
+            articleCommentRepository.save(dto.toEntity(article, userAccount));
         }catch(EntityNotFoundException e){
             //log.warn("댓글 저장 실패. 댓글의 게시글을 찾을 수 없습니다 - dto: {}\", dto");
             e.printStackTrace();
