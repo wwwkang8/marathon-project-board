@@ -8,6 +8,7 @@ import com.marathon.board.domain.UserAccount;
 import com.marathon.board.domain.constant.SearchType;
 import com.marathon.board.dto.ArticleDto;
 import com.marathon.board.dto.ArticleWithCommentsDto;
+import com.marathon.board.dto.UserAccountDto;
 import com.marathon.board.repository.ArticleRepository;
 import com.marathon.board.repository.UserAccountRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -72,13 +73,19 @@ public class ArticleService {
 
         try{
             Article article = articleRepository.getReferenceById(articleId);
-            if(dto.title() != null) {article.setTitle(dto.title());}
-            // record의 스펙이다. dto.getTitle()이 아니라 .title()로 값 가져오기 가능.
-            // java 13, 14에서 새로 나온 기능이다.get 이 없는 title을 볼 수 있다.
-            if(dto.content() != null) {article.setContent(dto.content());}
-            article.setHashTag(dto.hashtag());
+            UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
+
+            /** 게시글의 사용자와 인증된 사용자가 일치하는지 여부 확인 */
+            if(article.getUserAccount().equals(userAccount)){
+                if(dto.title() != null) {article.setTitle(dto.title());}
+                // record의 스펙이다. dto.getTitle()이 아니라 .title()로 값 가져오기 가능.
+                // java 13, 14에서 새로 나온 기능이다.get 이 없는 title을 볼 수 있다.
+                if(dto.content() != null) {article.setContent(dto.content());}
+                article.setHashTag(dto.hashtag());
+            }
+
         }catch(EntityNotFoundException e){
-            log.warn("게사글 업데이트 실패. 게시글을 찾을수 없습니다. - dto: {}", dto);
+            log.warn("게사글 업데이트 실패. 게시글을 수정하는데 필요한 정보를 찾을 수 없습니다. - {}", e.getLocalizedMessage());
         }
 
         /**
@@ -92,9 +99,9 @@ public class ArticleService {
 
     }
 
-    public void deleteArticle(long articleId) {
+    public void deleteArticle(long articleId, String userId) {
 
-        articleRepository.deleteById(articleId);
+        articleRepository.deleteByIdAndUserAccount_UserId(articleId, userId);
 
     }
 

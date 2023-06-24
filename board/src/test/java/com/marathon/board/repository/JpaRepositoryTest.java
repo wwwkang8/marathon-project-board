@@ -4,6 +4,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import com.marathon.board.config.JpaConfig;
@@ -14,10 +15,14 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.TestConfiguration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.domain.AuditorAware;
+import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @DisplayName("JPA 연결 테스트")
-@Import(JpaConfig.class)
+@Import(JpaRepositoryTest.TestJpaConfig.class)
 @DataJpaTest
 class JpaRepositoryTest {
 
@@ -59,7 +64,7 @@ class JpaRepositoryTest {
     void givenTestData_whenInserting_thenWorksFine(){
         // Given
         long previousCount = articleRepository.count();
-        UserAccount userAccount = userAccountRepository.save(UserAccount.of("uno3434", "pw", null, null, null));
+        UserAccount userAccount = userAccountRepository.save(UserAccount.of("uno3434", "pw", "jake@gmail.com", "jake", "helo"));
         Article article = Article.of(userAccount, "new article", "new content", "#spring");
 
 
@@ -102,5 +107,14 @@ class JpaRepositoryTest {
         // Then
         Assertions.assertThat(articleRepository.count()).isEqualTo(previousArticleCount - 1);
         //Assertions.assertThat(articleCommentRepository.count()).isEqualTo(previousAricleComment - 1);
+    }
+
+    @EnableJpaAuditing
+    @TestConfiguration
+    public static class TestJpaConfig {
+        @Bean
+        public AuditorAware<String> auditorAware() {
+            return () -> Optional.of("uno");
+        }
     }
 }

@@ -6,6 +6,7 @@ import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.BDDMockito.given;
 import static org.mockito.BDDMockito.then;
 import static org.mockito.BDDMockito.willDoNothing;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -19,6 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 import com.marathon.board.config.SecurityConfig;
+import com.marathon.board.config.TestSecurityConfig;
 import com.marathon.board.domain.constant.FormStatus;
 import com.marathon.board.domain.constant.SearchType;
 import com.marathon.board.dto.ArticleDto;
@@ -39,11 +41,14 @@ import org.springframework.context.annotation.Import;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.TestExecutionEvent;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.security.test.context.support.WithUserDetails;
 import org.springframework.test.web.servlet.MockMvc;
 
 @DisplayName("View 컨트롤러 - 게시글")
 @WebMvcTest(ArticleController.class) //이렇게 클래스 지정하면 모든 컨트롤러를 빈으로 생성하지 않고, 특정 클래스만 빈 생성. 부하 줄인다
-@Import({SecurityConfig.class, FormDataEncoder.class})
+@Import({TestSecurityConfig.class, FormDataEncoder.class})
 class ArticleControllerTest {
 
     private final MockMvc mvc;
@@ -98,7 +103,8 @@ class ArticleControllerTest {
         then(articleService).should().searchArticles(eq(null), eq(null), any(Pageable.class));
     }
 
-    @DisplayName("[view][GET] 게시글 페이지 - 정상 호출")
+    @WithMockUser
+    @DisplayName("[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자")
     @Test
     public void given_whenRequestingArticleView_thenReturnArticleView() throws Exception {
         //Given
@@ -118,6 +124,7 @@ class ArticleControllerTest {
         then(articleService).should().getArticleCount();
     }
 
+    @WithMockUser
     @DisplayName("[View][GET] 새 게시글 작성 페이지")
     @Test
     void givenNothing_whenRequesting_thenReturnsNewArticlePage() throws Exception {
@@ -131,9 +138,15 @@ class ArticleControllerTest {
             .andExpect(model().attribute("formStatus", FormStatus.CREATE));
     }
 
+    @WithUserDetails(value="unoTest", setupBefore = TestExecutionEvent.TEST_EXECUTION)
     @DisplayName("[view][POST] 새 게시글 등록 - 정상 호출")
     @Test
     void givenNewArticleInfo_whenRequesting_thenSavesNewArticle() throws Exception {
+        /**등록하는 것에는 실제 유저정보가 있어야한다
+         * Test_Excution :
+         * userDetailsServiceBeanName = "userDetailsService" bean이 유일해서 알아서 잘 찾는다.
+         */
+
         // Given
         ArticleRequest articleRequest = ArticleRequest.of("new title", "new content", "#new");
         willDoNothing().given(articleService).saveArticle(any(ArticleDto.class));
@@ -143,7 +156,7 @@ class ArticleControllerTest {
                 post("/articles/form")
                     .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                     .content(formDataEncoder.encode(articleRequest))
-                    //.with(csrf())
+                    .with(csrf())
             )
             .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/articles"))
@@ -151,6 +164,7 @@ class ArticleControllerTest {
         then(articleService).should().saveArticle(any(ArticleDto.class));
     }
 
+    @WithMockUser
     @DisplayName("[view][GET] 게시글 수정 페이지")
     @Test
     void givenNothing_whenRequesting_thenReturnsUpdatedArticlePage() throws Exception {
@@ -169,6 +183,7 @@ class ArticleControllerTest {
         then(articleService).should().getArticle(articleId);
     }
 
+    @WithUserDetails(value="unoTest", setupBefore = TestExecutionEvent.TEST_EXECUTION)
     @DisplayName("[view][POST] 게시글 수정 - 정상 호출")
     @Test
     void givenUpdatedArticleInfo_whenRequesting_thenUpdatesNewArticle() throws Exception {
@@ -182,7 +197,7 @@ class ArticleControllerTest {
                 post("/articles/" + articleId + "/form")
                     .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                     .content(formDataEncoder.encode(articleRequest))
-                    //.with(csrf())
+                    .with(csrf())
             )
             .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/articles/" + articleId))
@@ -190,23 +205,26 @@ class ArticleControllerTest {
         then(articleService).should().updateArticle(eq(articleId), any(ArticleDto.class));
     }
 
+    @WithUserDetails(value="unoTest", setupBefore = TestExecutionEvent.TEST_EXECUTION)
     @DisplayName("[view][POST] 게시글 삭제 - 정상 호출")
     @Test
     void givenArticleIdToDelete_whenRequesting_thenDeletesArticle() throws Exception {
         // Given
         long articleId = 1L;
-        willDoNothing().given(articleService).deleteArticle(articleId);
+        String userId = "unoTest";
+        //작성자만 게시글을 삭제할 수 있도록 변경
+        willDoNothing().given(articleService).deleteArticle(articleId, userId);
 
         // When & Then
         mvc.perform(
                 post("/articles/" + articleId + "/delete")
                     .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-                    //.with(csrf())
+                    .with(csrf())
             )
             .andExpect(status().is3xxRedirection())
             .andExpect(view().name("redirect:/articles"))
             .andExpect(redirectedUrl("/articles"));
-        then(articleService).should().deleteArticle(articleId);
+        then(articleService).should().deleteArticle(articleId, userId);
     }
 
 
