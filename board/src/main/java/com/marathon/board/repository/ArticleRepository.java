@@ -46,5 +46,7 @@ public interface ArticleRepository extends
 
     }
 
+    void deleteByIdAndUserAccount_UserId(Long articleId, String userId);
+
 }
 

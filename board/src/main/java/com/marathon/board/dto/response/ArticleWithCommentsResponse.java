@@ -16,6 +16,7 @@ public record ArticleWithCommentsResponse(
     LocalDateTime createdAt,
     String email,
     String nickname,
+    String userId,
     Set<ArticleCommentResponse> articleCommentResponse
 ) implements Serializable {
 
@@ -26,8 +27,8 @@ public record ArticleWithCommentsResponse(
      * 장점으로는 객체생성의 편의성, 명명규칙적용, 불변객생성이 있다.
      * of 메서드를 사용하면 입력해야 하는 매개변수를 강제할 수 있기 때문에 장점이 있다.
      * */
-    public static ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, Set<ArticleCommentResponse> articleCommentResponses) {
-        return new ArticleWithCommentsResponse(id, title, content, hashtag, createdAt, email, nickname, articleCommentResponses);
+    public static ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, String userId, Set<ArticleCommentResponse> articleCommentResponses) {
+        return new ArticleWithCommentsResponse(id, title, content, hashtag, createdAt, email, nickname, userId, articleCommentResponses);
     }
 
     /**
@@ -49,6 +50,7 @@ public record ArticleWithCommentsResponse(
             dto.createdAt(),
             dto.userAccountDto().email(),
             nickname,
+            dto.userAccountDto().userId(),
             dto.articleCommentDtos().stream()
                 .map(ArticleCommentResponse::from)
                 .collect(Collectors.toCollection(LinkedHashSet::new))
