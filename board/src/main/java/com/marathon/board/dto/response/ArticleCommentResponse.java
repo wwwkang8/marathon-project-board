@@ -10,7 +10,8 @@ public record ArticleCommentResponse(
     String content,
     LocalDateTime createdAt,
     String email,
-    String nickname
+    String nickname,
+    String userId
 ) implements Serializable {
 
     /**
@@ -18,8 +19,8 @@ public record ArticleCommentResponse(
      * 이는 정적팩토리 메서드이다.
      * 정적팩토리 메서드를 사용하면 객체생성의 편의성이 좋아지고, 명명규칙이 생기고, 불변객체 생성의 장점이 있다.
      * */
-    public static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickname) {
-        return new ArticleCommentResponse(id, content, createdAt, email, nickname);
+    public static ArticleCommentResponse of(Long id, String content, LocalDateTime createdAt, String email, String nickname, String userId) {
+        return new ArticleCommentResponse(id, content, createdAt, email, nickname, userId);
     }
 
     /**
@@ -38,7 +39,8 @@ public record ArticleCommentResponse(
             dto.content(),
             dto.createdAt(),
             dto.userAccountDto().email(),
-            nickname
+            nickname,
+            dto.userAccountDto().userId()
         );
     }
 
