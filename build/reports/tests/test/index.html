@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Test Summary</title>
+<link href="css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<script src="js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Test Summary</h1>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">56</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">9</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">6</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.864s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">82%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Ignored tests</a>
+</li>
+<li>
+<a href="#tab2">Packages</a>
+</li>
+<li>
+<a href="#tab3">Classes</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/com.marathon.board.BoardApplicationTests.html">BoardApplicationTests</a>.
+<a href="classes/com.marathon.board.BoardApplicationTests.html#contextLoads()">contextLoads()</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html">View 컨트롤러 - 댓글</a>.
+<a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html#givenArticleCommentInfo_whenRequesting_thenSavesNewArticleComment()">[view][POST] 댓글 등록 - 정상호출</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.AuthControllerTest.html">인증 컨트롤러</a>.
+<a href="classes/com.marathon.board.controller.AuthControllerTest.html#givenNothing_whenTryingToLogIn_thenReturnsLogInView()">[View][Get] 로그인 테스트</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.MainControllerTest.html">MainControllerTest</a>.
+<a href="classes/com.marathon.board.controller.MainControllerTest.html#givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage()">givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage()</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenDeleting_thenWorksFine()">Delete Test</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenInserting_thenWorksFine()">Insert Test</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenSelecting_thenWorksFine()">Select Test</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenUpdating_thenWorksFine()">Update Test</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.util.FormDataEncoderTest.html">테스트 도구 - Form 데이터 인코더</a>.
+<a href="classes/com.marathon.board.util.FormDataEncoderTest.html#givenObject_whenEncoding_thenReturnsFormEncodedString()">객체를 넣으면, url encoding 된 form body data 형식의 문자열을 돌려준다.</a>
+</li>
+</ul>
+</div>
+<div id="tab1" class="tab">
+<h2>Ignored tests</h2>
+<ul class="linkList">
+<li>
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html">View 컨트롤러 - 게시글</a>.
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html#given_whenRequestingArticleSearchView_thenReturnArticleSearchView()">[view][GET] 게시글 검색전용페이지 - 정상 호출</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
+<a href="classes/com.marathon.board.controller.DataRestTest.html#givenArticleId_whenRequestArticleComments_thenReturnArticlesCommentJsonResponse()">[api] 게시글 댓글 조회</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
+<a href="classes/com.marathon.board.controller.DataRestTest.html#givenArticleId_whenRequestArticles_thenReturnArticlesJsonResponse()">[api] 게시글 단건 조회</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
+<a href="classes/com.marathon.board.controller.DataRestTest.html#givenNothing_whenRequestArticleComment_thenReturnArticleCommentJsonResponse()">[api] 댓글 단건 조회</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
+<a href="classes/com.marathon.board.controller.DataRestTest.html#givenNothing_whenRequestArticleComments_thenReturnArticlesCommentJsonResponse()">[api] 댓글 리스트 조회</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
+<a href="classes/com.marathon.board.controller.DataRestTest.html#givenNotion_whenRequestArticles_thenReturnArticlesJsonResponse()">[api] 게시글 리스트 조회</a>
+</li>
+</ul>
+</div>
+<div id="tab2" class="tab">
+<h2>Packages</h2>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Tests</th>
+<th>Failures</th>
+<th>Ignored</th>
+<th>Duration</th>
+<th>Success rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="failures">
+<a href="packages/com.marathon.board.html">com.marathon.board</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.004s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/com.marathon.board.controller.html">com.marathon.board.controller</a>
+</td>
+<td>20</td>
+<td>3</td>
+<td>6</td>
+<td>0.560s</td>
+<td class="failures">78%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/com.marathon.board.repository.html">com.marathon.board.repository</a>
+</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0.003s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="packages/com.marathon.board.service.html">com.marathon.board.service</a>
+</td>
+<td>30</td>
+<td>0</td>
+<td>0</td>
+<td>0.296s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="packages/com.marathon.board.util.html">com.marathon.board.util</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="failures">0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="tab3" class="tab">
+<h2>Classes</h2>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th>Tests</th>
+<th>Failures</th>
+<th>Ignored</th>
+<th>Duration</th>
+<th>Success rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.BoardApplicationTests.html">com.marathon.board.BoardApplicationTests</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.004s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html">com.marathon.board.controller.ArticleCommentControllerTest</a>
+</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>0.209s</td>
+<td class="failures">50%</td>
+</tr>
+<tr>
+<td class="skipped">
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html">com.marathon.board.controller.ArticleControllerTest</a>
+</td>
+<td>11</td>
+<td>0</td>
+<td>1</td>
+<td>0.347s</td>
+<td class="skipped">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.controller.AuthControllerTest.html">com.marathon.board.controller.AuthControllerTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="skipped">
+<a href="classes/com.marathon.board.controller.DataRestTest.html">com.marathon.board.controller.DataRestTest</a>
+</td>
+<td>5</td>
+<td>0</td>
+<td>5</td>
+<td>0s</td>
+<td class="skipped">-</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.controller.MainControllerTest.html">com.marathon.board.controller.MainControllerTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.003s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">com.marathon.board.repository.JpaRepositoryTest</a>
+</td>
+<td>4</td>
+<td>4</td>
+<td>0</td>
+<td>0.003s</td>
+<td class="failures">0%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.marathon.board.service.ArticleCommentServiceTest.html">com.marathon.board.service.ArticleCommentServiceTest</a>
+</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0.221s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">com.marathon.board.service.ArticleServiceTest</a>
+</td>
+<td>13</td>
+<td>0</td>
+<td>0</td>
+<td>0.031s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.marathon.board.service.PaginationServiceTest.html">com.marathon.board.service.PaginationServiceTest</a>
+</td>
+<td>11</td>
+<td>0</td>
+<td>0</td>
+<td>0.044s</td>
+<td class="success">100%</td>
+</tr>
+<tr>
+<td class="failures">
+<a href="classes/com.marathon.board.util.FormDataEncoderTest.html">com.marathon.board.util.FormDataEncoderTest</a>
+</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0.001s</td>
+<td class="failures">0%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 1. 오전 9:56:19</p>
+</div>
+</div>
+</body>
+</html>
