@@ -6,13 +6,6 @@
       "sourceType": "com.marathon.board.config.ThymeleafConfig$Thymeleaf3Properties"
     }
   ],
-  "properties": [
-    {
-      "name": "spring.thymeleaf3.decoupled-logic",
-      "type": "java.lang.Boolean",
-      "sourceType": "com.marathon.board.config.ThymeleafConfig$Thymeleaf3Properties",
-      "defaultValue": false
-    }
-  ],
+  "properties": [],
   "hints": []
 }
