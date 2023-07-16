@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.209s</div>
+<div class="counter">0.262s</div>
 <p>duration</p>
 </div>
 </td>
@@ -185,13 +185,13 @@
 <tr>
 <td class="success">[view][GET] 댓글 삭제 - 정상 호출</td>
 <td class="success">givenArticleCommentIdToDelete_whenRequesting_thenDeletesArticleComment()</td>
-<td class="success">0.162s</td>
+<td class="success">0.200s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">[view][POST] 댓글 등록 - 정상호출</td>
 <td class="failures">givenArticleCommentInfo_whenRequesting_thenSavesNewArticleComment()</td>
-<td class="failures">0.047s</td>
+<td class="failures">0.062s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -199,8 +199,8 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-07-01T09:56:13.903+09:00  INFO 2507 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleCommentControllerTest]: ArticleCommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-07-01T09:56:13.930+09:00  INFO 2507 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleCommentControllerTest
+<pre>2023-07-16T18:04:22.565+09:00  INFO 5112 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleCommentControllerTest]: ArticleCommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-07-16T18:04:22.611+09:00  INFO 5112 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleCommentControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -210,27 +210,27 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-01T09:56:13.982+09:00  INFO 2507 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Starting ArticleCommentControllerTest using Java 17.0.6 with PID 2507 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board/board)
-2023-07-01T09:56:13.983+09:00  INFO 2507 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-07-01T09:56:14.607+09:00  INFO 2507 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-07-01T09:56:14.614+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
-2023-07-01T09:56:14.625+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2023-07-01T09:56:14.630+09:00  INFO 2507 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7ce09850, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1836228d, org.springframework.security.web.context.SecurityContextHolderFilter@51ea9f02, org.springframework.security.web.header.HeaderWriterFilter@172f88b1, org.springframework.security.web.csrf.CsrfFilter@79b3f1c6, org.springframework.security.web.authentication.logout.LogoutFilter@6e847a7, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@38f12596, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@3f3b0b19, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@3e216fc9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@37b17938, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@54ba7b3f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@fcd300e, org.springframework.security.web.access.ExceptionTranslationFilter@3cc148d, org.springframework.security.web.access.intercept.AuthorizationFilter@6608072d]
-2023-07-01T09:56:14.649+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-07-01T09:56:14.653+09:00 DEBUG 2507 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-07-01T09:56:14.713+09:00  INFO 2507 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-07-01T09:56:14.714+09:00  INFO 2507 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-07-01T09:56:14.715+09:00  INFO 2507 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-07-01T09:56:14.742+09:00  INFO 2507 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Started ArticleCommentControllerTest in 0.803 seconds (process running for 8.811)
-2023-07-01T09:56:14.867+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleCommentController#deleteArticleComment(Long, BoardPrincipal, Long)
-2023-07-01T09:56:14.891+09:00 DEBUG 2507 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-01T09:56:14.952+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-07-01T09:56:14.954+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2023-07-16T18:04:22.686+09:00  INFO 5112 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Starting ArticleCommentControllerTest using Java 17.0.6 with PID 5112 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-16T18:04:22.687+09:00  INFO 5112 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-07-16T18:04:23.498+09:00  INFO 5112 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-16T18:04:23.582+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2023-07-16T18:04:23.700+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-07-16T18:04:23.743+09:00  INFO 5112 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3606c525, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4b6abf4e, org.springframework.security.web.context.SecurityContextHolderFilter@4a6dd88e, org.springframework.security.web.header.HeaderWriterFilter@2ee91bdf, org.springframework.security.web.csrf.CsrfFilter@57ab5033, org.springframework.security.web.authentication.logout.LogoutFilter@419ac0f5, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5b628249, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@1c3b4de1, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@27959922, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c62f56f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3652ce04, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@794daa09, org.springframework.security.web.access.ExceptionTranslationFilter@4c2057c6, org.springframework.security.web.access.intercept.AuthorizationFilter@1a18e18d]
+2023-07-16T18:04:23.840+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-16T18:04:23.890+09:00 DEBUG 5112 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-16T18:04:24.062+09:00  INFO 5112 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-07-16T18:04:24.063+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-07-16T18:04:24.065+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-07-16T18:04:24.104+09:00  INFO 5112 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Started ArticleCommentControllerTest in 1.459 seconds (process running for 10.885)
+2023-07-16T18:04:24.254+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleCommentController#deleteArticleComment(Long, BoardPrincipal, Long)
+2023-07-16T18:04:24.290+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-16T18:04:24.368+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-07-16T18:04:24.371+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /comment/new
-       Parameters = {articleId=[1], content=[test comment], _csrf=[lsQXqw1MlfftOnSpKlwFBd1yXVJu13xk2i7KRpC5IkUYSBp_9_Ihm2surcXACETNSHExM-1CcGpctB1JuxupcKWNFHR9fSlI]}
+       Parameters = {articleId=[1], content=[test comment], _csrf=[TPmPnxmxntxP9995c0dgAkvKbYaZP8LZ4s00Co2tGuy9REQDe83qqC2Drrhix-dOEWpUNi7_QL-oD6f0hvkBPr-fL9nbIHI7]}
           Headers = [Content-Type:&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;, Content-Length:&quot;34&quot;]
              Body = articleId=1&amp;content=test%20comment
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=BoardPrincipal[username=unoTest, password=pw, authorities=[ROLE_USER], email=uno-test@gmail.com, nickname=uno-test, memo=test-memo], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -273,7 +273,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 1. 오전 9:56:19</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 16. 오후 6:04:29</p>
 </div>
 </div>
 </body>

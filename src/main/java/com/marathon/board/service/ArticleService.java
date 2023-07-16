@@ -43,7 +43,7 @@ public class ArticleService {
             case CONTENT -> articleRepository.findByContentContaining(searchKeyword, pageable).map(ArticleDto::from);
             case ID -> articleRepository.findByUserAccount_UserIdContaining(searchKeyword, pageable).map(ArticleDto::from);
             case NICKNAME -> articleRepository.findByUserAccount_NicknameContaining(searchKeyword, pageable).map(ArticleDto::from);
-            case HASHTAG -> articleRepository.findByHashTag("#"+searchKeyword, pageable).map(ArticleDto::from);
+            case HASHTAG -> articleRepository.findByHashtagNames(null, pageable).map(ArticleDto::from);
         };
 
     }
@@ -81,7 +81,7 @@ public class ArticleService {
                 // record의 스펙이다. dto.getTitle()이 아니라 .title()로 값 가져오기 가능.
                 // java 13, 14에서 새로 나온 기능이다.get 이 없는 title을 볼 수 있다.
                 if(dto.content() != null) {article.setContent(dto.content());}
-                article.setHashTag(dto.hashtag());
+                //article.setHashTag(dto.hashtag());
             }
 
         }catch(EntityNotFoundException e){
@@ -122,7 +122,7 @@ public class ArticleService {
             return Page.empty(pageable); // 해시태그 없으면 빈페이지 보내준다.
         }
 
-        return articleRepository.findByHashTag(hashtag, pageable).map(ArticleDto::from);
+        return articleRepository.findByHashtagNames(null, pageable).map(ArticleDto::from);
 
     }
 

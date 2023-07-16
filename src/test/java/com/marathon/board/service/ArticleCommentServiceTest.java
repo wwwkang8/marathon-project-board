@@ -2,6 +2,7 @@ package com.marathon.board.service;
 
 import com.marathon.board.domain.Article;
 import com.marathon.board.domain.ArticleComment;
+import com.marathon.board.domain.Hashtag;
 import com.marathon.board.domain.UserAccount;
 import com.marathon.board.dto.ArticleCommentDto;
 import com.marathon.board.dto.UserAccountDto;
@@ -19,6 +20,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -75,8 +77,7 @@ class ArticleCommentServiceTest {
     void givenNonexistentArticle_whenSavingArticleComment_thenLogsSituationAndDoesNothing() {
         // Given
         ArticleCommentDto dto = createArticleCommentDto("댓글");
-        given(articleRepository.getReferenceById(dto.articleId())).willThrow(
-            EntityNotFoundException.class);
+        given(articleRepository.getReferenceById(dto.articleId())).willThrow(EntityNotFoundException.class);
 
         // When
         sut.saveArticleComment(dto);
@@ -166,7 +167,7 @@ class ArticleCommentServiceTest {
 
     private ArticleComment createArticleComment(String content) {
         return ArticleComment.of(
-            Article.of(createUserAccount(), "title", "content", "hashtag"),
+            createArticle(),
             createUserAccount(),
             content
         );
@@ -183,12 +184,18 @@ class ArticleCommentServiceTest {
     }
 
     private Article createArticle() {
-        return Article.of(
+        Article article = Article.of(
             createUserAccount(),
             "title",
-            "content",
-            "#java"
+            "content"
         );
+        article.addHashtags(Set.of(createHashtag(article)));
+
+        return article;
+    }
+
+    private Hashtag createHashtag(Article article) {
+        return Hashtag.of("java");
     }
 
 }
