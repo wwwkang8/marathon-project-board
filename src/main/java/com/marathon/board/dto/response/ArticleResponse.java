@@ -2,14 +2,18 @@ package com.marathon.board.dto.response;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Set;
+import java.util.stream.Collectors;
 
+import com.marathon.board.domain.Hashtag;
 import com.marathon.board.dto.ArticleDto;
+import com.marathon.board.dto.HashtagDto;
 
 public record ArticleResponse(
     Long id,
     String title,
     String content,
-    String hashtag,
+    Set<String> hashtags,
     LocalDateTime createdAt,
     String email,
     String nickname
@@ -22,8 +26,8 @@ public record ArticleResponse(
      * 정적팩토리 메서드라고 한다.(이펙티브 자바에 나오는 개념이라고 한다)
      * 장점으로는 객체 생성의 편의성, 불변객체생성, 명명규적용이 있다.
      * */
-    public static ArticleResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname) {
-        return new ArticleResponse(id, title, content, hashtag, createdAt, email, nickname);
+    public static ArticleResponse of(Long id, String title, String content, Set<String> hashtags, LocalDateTime createdAt, String email, String nickname) {
+        return new ArticleResponse(id, title, content, hashtags, createdAt, email, nickname);
     }
 
     /**
@@ -43,7 +47,9 @@ public record ArticleResponse(
             dto.id(),
             dto.title(),
             dto.content(),
-            dto.hashtag(),
+            dto.hashtagDtos().stream()
+                            .map(HashtagDto::hashtagName)
+                            .collect(Collectors.toUnmodifiableSet()),
             dto.createdAt(),
             dto.userAccountDto().email(),
             nickname

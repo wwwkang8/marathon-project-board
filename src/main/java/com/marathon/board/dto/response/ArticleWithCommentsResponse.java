@@ -7,12 +7,13 @@ import java.util.stream.Collectors;
 import java.util.LinkedHashSet;
 
 import com.marathon.board.dto.ArticleWithCommentsDto;
+import com.marathon.board.dto.HashtagDto;
 
 public record ArticleWithCommentsResponse(
     Long id,
     String title,
     String content,
-    String hashtag,
+    Set<String> hashtags,
     LocalDateTime createdAt,
     String email,
     String nickname,
@@ -27,8 +28,8 @@ public record ArticleWithCommentsResponse(
      * 장점으로는 객체생성의 편의성, 명명규칙적용, 불변객생성이 있다.
      * of 메서드를 사용하면 입력해야 하는 매개변수를 강제할 수 있기 때문에 장점이 있다.
      * */
-    public static ArticleWithCommentsResponse of(Long id, String title, String content, String hashtag, LocalDateTime createdAt, String email, String nickname, String userId, Set<ArticleCommentResponse> articleCommentResponses) {
-        return new ArticleWithCommentsResponse(id, title, content, hashtag, createdAt, email, nickname, userId, articleCommentResponses);
+    public static ArticleWithCommentsResponse of(Long id, String title, String content, Set<String> hashtags, LocalDateTime createdAt, String email, String nickname, String userId, Set<ArticleCommentResponse> articleCommentResponses) {
+        return new ArticleWithCommentsResponse(id, title, content, hashtags, createdAt, email, nickname, userId, articleCommentResponses);
     }
 
     /**
@@ -46,7 +47,9 @@ public record ArticleWithCommentsResponse(
             dto.id(),
             dto.title(),
             dto.content(),
-            dto.hashtag(),
+            dto.hashtagDtos().stream()
+                .map(HashtagDto::hashtagName)
+                .collect(Collectors.toUnmodifiableSet()),
             dto.createdAt(),
             dto.userAccountDto().email(),
             nickname,

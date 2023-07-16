@@ -1,21 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="View 컨트롤러 - 게시글" tests="11" skipped="1" failures="0" errors="0" timestamp="2023-07-01T00:56:18" hostname="Jeongui-MacBookPro.local" time="0.368">
+<testsuite name="View 컨트롤러 - 게시글" tests="14" skipped="1" failures="2" errors="0" timestamp="2023-07-16T09:04:24" hostname="Jeongui-MacBookPro.local" time="0.534">
   <properties/>
-  <testcase name="[view][POST] 게시글 수정 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.022"/>
-  <testcase name="[view][GET] 게시글 해시태그 검색페이지 - 정상 호출, 해시태그 입력한 경우" classname="com.marathon.board.controller.ArticleControllerTest" time="0.207"/>
-  <testcase name="[View][GET] 새 게시글 작성 페이지" classname="com.marathon.board.controller.ArticleControllerTest" time="0.015"/>
-  <testcase name="[view][GET] 게시글 해시태그 검색페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.011"/>
-  <testcase name="[view][POST] 게시글 삭제 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.008"/>
-  <testcase name="[view][GET] 게시글 검색전용페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.001">
+  <testcase name="[view][POST] 게시글 수정 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.033"/>
+  <testcase name="[view][GET] 게시글 해시태그 검색 페이지 - 정상 호출, 해시태그 입력" classname="com.marathon.board.controller.ArticleControllerTest" time="0.27"/>
+  <testcase name="[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자" classname="com.marathon.board.controller.ArticleControllerTest" time="0.041">
+    <failure message="java.lang.AssertionError: Model attribute 'searchTypeHashtag' expected:&lt;HASHTAG&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Model attribute 'searchTypeHashtag' expected:&lt;HASHTAG&gt; but was:&lt;null&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.ModelResultMatchers.lambda$attribute$1(ModelResultMatchers.java:74)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.marathon.board.controller.ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView(ArticleControllerTest.java:182)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="[view][GET] 게시글 수정 페이지 - 정상 호출, 인증된 사용자" classname="com.marathon.board.controller.ArticleControllerTest" time="0.02"/>
+  <testcase name="[view][GET] 게시글 검색 전용 페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.001">
     <skipped/>
   </testcase>
-  <testcase name="[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자" classname="com.marathon.board.controller.ArticleControllerTest" time="0.031"/>
-  <testcase name="[view][GET] 게시글 수정 페이지" classname="com.marathon.board.controller.ArticleControllerTest" time="0.015"/>
-  <testcase name="[view][POST] 새 게시글 등록 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.009"/>
-  <testcase name="[view][GET] 게시글 리스트 {게시판} 페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.018"/>
-  <testcase name="[view][GET] 게시글 리스트 {게시판} 페이지 - 검색어와 함께 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.01"/>
-  <system-out><![CDATA[2023-07-01T09:56:18.619+09:00  INFO 2507 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleControllerTest]: ArticleControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-07-01T09:56:18.624+09:00  INFO 2507 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleControllerTest
+  <testcase name="[view][GET] 게시글 리스트 (게시판) 페이지 - 검색어와 함께 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.023"/>
+  <testcase name="[view][GET] 새 게시글 작성 페이지" classname="com.marathon.board.controller.ArticleControllerTest" time="0.011"/>
+  <testcase name="[view][GET] 게시글 해시태그 검색 페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.016"/>
+  <testcase name="[view][GET] 게시글 리스트 (게시판) 페이지 - 페이징, 정렬 기능" classname="com.marathon.board.controller.ArticleControllerTest" time="0.015"/>
+  <testcase name="[view][POST] 게시글 삭제 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.011"/>
+  <testcase name="[view][GET] 게시글 페이지 - 인증 없을 땐 로그인 페이지로 이동" classname="com.marathon.board.controller.ArticleControllerTest" time="0.014"/>
+  <testcase name="[view][GET] 게시글 리스트 (게시판) 페이지 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.015">
+    <failure message="java.lang.AssertionError: Model attribute 'searchTypeHashtag' expected:&lt;HASHTAG&gt; but was:&lt;null&gt;" type="java.lang.AssertionError">java.lang.AssertionError: Model attribute 'searchTypeHashtag' expected:&lt;HASHTAG&gt; but was:&lt;null&gt;
+	at org.springframework.test.util.AssertionErrors.fail(AssertionErrors.java:59)
+	at org.springframework.test.util.AssertionErrors.assertEquals(AssertionErrors.java:122)
+	at org.springframework.test.web.servlet.result.ModelResultMatchers.lambda$attribute$1(ModelResultMatchers.java:74)
+	at org.springframework.test.web.servlet.MockMvc$1.andExpect(MockMvc.java:214)
+	at com.marathon.board.controller.ArticleControllerTest.givenNothing_whenRequestingArticlesView_thenReturnsArticlesView(ArticleControllerTest.java:92)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:727)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:217)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:213)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:138)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:107)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:88)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:67)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:52)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:86)
+	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:86)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:53)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:79)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:75)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at jdk.proxy1/jdk.proxy1.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:113)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:65)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</failure>
+  </testcase>
+  <testcase name="[view][POST] 새 게시글 등록 - 정상 호출" classname="com.marathon.board.controller.ArticleControllerTest" time="0.015"/>
+  <testcase name="[view][GET] 게시글 수정 페이지 - 인증 없을 땐 로그인 페이지로 이동" classname="com.marathon.board.controller.ArticleControllerTest" time="0.011"/>
+  <system-out><![CDATA[2023-07-16T18:04:24.392+09:00  INFO 5112 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleControllerTest]: ArticleControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-07-16T18:04:24.398+09:00  INFO 5112 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -25,57 +214,399 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-01T09:56:18.646+09:00  INFO 2507 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Starting ArticleControllerTest using Java 17.0.6 with PID 2507 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board/board)
-2023-07-01T09:56:18.646+09:00  INFO 2507 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : No active profile set, falling back to 1 default profile: "default"
-2023-07-01T09:56:18.826+09:00  INFO 2507 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-07-01T09:56:18.832+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2023-07-01T09:56:18.842+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2023-07-01T09:56:18.848+09:00  INFO 2507 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@53ac6bb4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@19f8c830, org.springframework.security.web.context.SecurityContextHolderFilter@3b05fba2, org.springframework.security.web.header.HeaderWriterFilter@6719b4a, org.springframework.security.web.csrf.CsrfFilter@74d56f47, org.springframework.security.web.authentication.logout.LogoutFilter@60019f4b, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3f3b50df, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@385269dd, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@442ca132, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64f514d2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32730f12, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2174acc0, org.springframework.security.web.access.ExceptionTranslationFilter@16a81f09, org.springframework.security.web.access.intercept.AuthorizationFilter@619783ce]
-2023-07-01T09:56:18.862+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-07-01T09:56:18.866+09:00 DEBUG 2507 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-07-01T09:56:18.889+09:00  INFO 2507 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-07-01T09:56:18.889+09:00  INFO 2507 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-07-01T09:56:18.889+09:00  INFO 2507 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2023-07-01T09:56:18.901+09:00  INFO 2507 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Started ArticleControllerTest in 0.275 seconds (process running for 12.97)
-2023-07-01T09:56:18.914+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticle(Long, BoardPrincipal, ArticleRequest)
-2023-07-01T09:56:18.923+09:00 DEBUG 2507 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-01T09:56:18.937+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:18.938+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:18.938+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:18.939+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:18.949+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.144+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-01T09:56:19.144+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-01T09:56:19.144+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-01T09:56:19.144+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-01T09:56:19.145+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.158+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:19.158+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:19.159+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:19.159+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-01T09:56:19.161+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.172+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#deleteArticle(Long, BoardPrincipal)
-2023-07-01T09:56:19.174+09:00 DEBUG 2507 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-01T09:56:19.186+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-01T09:56:19.187+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-01T09:56:19.187+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-01T09:56:19.187+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-01T09:56:19.190+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.219+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-01T09:56:19.219+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-01T09:56:19.220+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-01T09:56:19.220+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-01T09:56:19.221+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.236+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#postNewArticle(BoardPrincipal, ArticleRequest)
-2023-07-01T09:56:19.238+09:00 DEBUG 2507 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-01T09:56:19.247+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.247+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.247+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.251+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-01T09:56:19.267+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.267+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.268+09:00 DEBUG 2507 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-01T09:56:19.269+09:00 DEBUG 2507 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:24.436+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Starting ArticleControllerTest using Java 17.0.6 with PID 5112 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-16T18:04:24.436+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : No active profile set, falling back to 1 default profile: "default"
+2023-07-16T18:04:24.760+09:00  INFO 5112 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-16T18:04:24.773+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2023-07-16T18:04:24.791+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-07-16T18:04:24.797+09:00  INFO 5112 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ae20523, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a282c78, org.springframework.security.web.context.SecurityContextHolderFilter@ffd26d1, org.springframework.security.web.header.HeaderWriterFilter@544ee437, org.springframework.security.web.csrf.CsrfFilter@36e23af, org.springframework.security.web.authentication.logout.LogoutFilter@2f229f60, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@310045fc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5410bbdf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2700609f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7dfc0fda, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@775c865f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@141cee26, org.springframework.security.web.access.ExceptionTranslationFilter@5e4a9c16, org.springframework.security.web.access.intercept.AuthorizationFilter@6dc010a2]
+2023-07-16T18:04:24.823+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-16T18:04:24.829+09:00 DEBUG 5112 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-16T18:04:24.860+09:00  INFO 5112 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-07-16T18:04:24.860+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-07-16T18:04:24.861+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-07-16T18:04:24.875+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Started ArticleControllerTest in 0.469 seconds (process running for 11.656)
+2023-07-16T18:04:24.892+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticle(Long, BoardPrincipal, ArticleRequest)
+2023-07-16T18:04:24.908+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-16T18:04:24.926+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:24.927+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:24.927+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:24.928+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:24.940+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.200+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.201+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.201+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.202+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.206+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /articles/1
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=org.springframework.security.core.userdetails.User [Username=user, Password=[PROTECTED], Enabled=true, AccountNonExpired=true, credentialsNonExpired=true, AccountNonLocked=true, Granted Authorities=[ROLE_USER]], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
+
+Handler:
+             Type = com.marathon.board.controller.ArticleController
+           Method = com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = articles/detail
+             View = null
+        Attribute = article
+            value = ArticleWithCommentsResponse[id=1, title=title, content=content, hashtags=[java], createdAt=2023-07-16T18:04:25.198889, email=uno@mail.com, nickname=Uno, userId=uno, articleCommentResponse=[]]
+           errors = []
+        Attribute = articleComments
+            value = []
+        Attribute = totalCount
+            value = 1
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Language:"en", Content-Type:"text/html;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = text/html;charset=UTF-8
+             Body = <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Uno Kim">
+    <title>게시글 페이지</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="/css/articles/article-content.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="header">
+    헤더
+    <hr>
+</header>
+
+<main id="article-main" class="container">
+    <header id="article-header" class="py-5 text-center">
+        <h1>첫번째 글</h1>
+    </header>
+
+    <div class="row g-5">
+        <section class="col-md-3 col-lg-4 order-md-last">
+            <aside>
+                <p><span id="nickname">Uno</span></p>
+                <p><a id="email" href="mailto:djkehh@gmail.com" >uno@mail.com</a></p>
+                <p><time id="created-at" datetime="2022-01-01T00:00:00">2022-01-01</time></p>
+                <p><span id="hashtag">#java</span></p>
+            </aside>
+        </section>
+
+        <article id="article-content" class="col-md-9 col-lg-8">
+            <pre>본문<br><br></pre>
+        </article>
+    </div>
+
+    <div class="row g-5" id="article-buttons">
+        <form id="delete-article-form">
+            <div class="pb-5 d-grid gap-2 d-md-block">
+                <a class="btn btn-success me-md-2" role="button" id="update-article">수정</a>
+                <button class="btn btn-danger me-md-2" type="submit">삭제</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="row g-5">
+        <section>
+            <form class="row g-3" id="comment-form">
+                <input type="hidden" class="aritlce-id">
+                <div class="col-md-9 col-lg-8">
+                    <label for="comment-textbox" hidden>댓글</label>
+                    <textarea class="form-control" id="comment-textbox" placeholder="댓글 쓰기.." rows="3" required></textarea>
+                </div>
+                <div class="col-md-3 col-lg-4">
+                    <label for="comment-submit" hidden>댓글 쓰기</label>
+                    <button class="btn btn-primary" id="comment-submit" type="submit">쓰기</button>
+                </div>
+            </form>
+
+            <ul id="article-comments" class="row col-md-10 col-lg-8 pt-3">
+                <li>
+                    <form class="comment-form">
+                        <input type="hidden" class="article-id">
+                        <div class="row">
+                            <div class="col-md-10 col-lg-9">
+                                <strong>Jeongho</strong>
+                                <small><time>2023-06-19</time></small>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                                    Lorem ipsum dolor sit amet
+                                </p>
+                            </div>
+                            <div class="col-2 mb-3 align-self-center">
+                                <button type="submit" class="btn btn-outline-danger" id="delete-comment-button">삭제</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </li>
+                <li>
+                    <div class="row">
+                        <div class="col-md-10 col-lg-9">
+                            <strong>Jerry</strong>
+                            <small><time>2022-01-01</time></small>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                                Lorem ipsum dolor sit amet
+                            </p>
+                        </div>
+                        <div class="col-2 mb-3 align-self-center">
+                            <button type="submit" class="btn btn-outline-danger" hidden>삭제</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </section>
+    </div>
+
+    <div class="row g-5">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; prev</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">next &raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</main>
+
+<footer id="footer">
+    <hr>
+    푸터
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-07-16T18:04:25.236+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.236+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.237+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.237+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.240+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.264+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.264+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.265+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.269+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.288+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-16T18:04:25.289+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-16T18:04:25.289+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-16T18:04:25.290+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-16T18:04:25.290+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.303+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:25.304+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:25.305+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:25.305+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-16T18:04:25.307+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.325+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.325+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.326+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.329+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-16T18:04:25.343+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#deleteArticle(Long, BoardPrincipal)
+2023-07-16T18:04:25.345+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-16T18:04:25.354+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.354+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.355+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-16T18:04:25.373+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.374+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.374+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-16T18:04:25.376+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /articles
+       Parameters = {}
+          Headers = []
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.marathon.board.controller.ArticleController
+           Method = com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = articles/index
+             View = null
+        Attribute = articles
+            value = Page 1 of 1 containing UNKNOWN instances
+           errors = []
+        Attribute = paginationBarNumbers
+            value = [0, 1, 2, 3, 4]
+        Attribute = searchTypes
+            value = [TITLE, CONTENT, ID, NICKNAME, HASHTAG]
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = [Content-Language:"en", Content-Type:"text/html;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"0", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0", X-Frame-Options:"DENY"]
+     Content type = text/html;charset=UTF-8
+             Body = <!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Uno Kim">
+    <title>게시판 페이지</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="/css/search-bar.css" rel="stylesheet">
+    <link href="/css/articles/table-header.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header id="header">
+    헤더 삽입부
+    <hr>
+</header>
+
+<main class="container">
+
+    <div class="row">
+        <div class="card card-margin search-form">
+            <div class="card-body p-0">
+                <form id="search-form">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-lg-3 col-md-3 col-sm-12 p-0">
+                                    <label for="search-type" hidden>검색 유형</label>
+                                    <select class="form-control" id="search-type" name="searchType">
+                                        <option>제목</option>
+                                        <option>본문</option>
+                                        <option>id</option>
+                                        <option>닉네임</option>
+                                        <option>해시태그</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-8 col-md-6 col-sm-12 p-0">
+                                    <label for="search-value" hidden>검색어</label>
+                                    <input type="text" placeholder="검색어..." class="form-control" id="search-value" name="searchValue">
+                                </div>
+                                <div class="col-lg-1 col-md-3 col-sm-12 p-0">
+                                    <button type="submit" class="btn btn-base">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table" id="article-table">
+            <thead>
+                    <tr>
+                        <th class="title col-6"><a>제목</a></th>
+                        <th class="hashtag col-2"><a>해시태그</a></th>
+                        <th class="user-id"><a>작성자</a></th>
+                        <th class="created-at"><a>작성일</a></th>
+                    </tr>
+                </thead>
+            <tbody>
+                <tr>
+                    <td class="title"><a>첫글</a></td>
+                    <td class="hashtag">#java</td>
+                    <td class="user_id">Uno</td>
+                    <td class="created-at"><time>2022-01-01</time></td>
+                </tr>
+                <tr>
+                    <td>두번째글</td>
+                    <td>#spring</td>
+                    <td>Uno</td>
+                    <td><time>2022-01-02</time></td>
+                </tr>
+                <tr>
+                    <td>세번째글</td>
+                    <td>#java</td>
+                    <td>Uno</td>
+                    <td><time>2022-01-03</time></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-primary me-md-2" role="button" id="write-article">글쓰기</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <nav id="pagination" aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</main>
+
+<footer id="footer">
+    <hr>
+    푸터
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+2023-07-16T18:04:25.392+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#postNewArticle(BoardPrincipal, ArticleRequest)
+2023-07-16T18:04:25.394+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-16T18:04:25.408+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.409+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-16T18:04:25.409+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

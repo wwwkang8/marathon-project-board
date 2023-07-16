@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">56</div>
+<div class="counter">64</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">9</div>
+<div class="counter">20</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.864s</div>
+<div class="counter">1.205s</div>
 <p>duration</p>
 </div>
 </td>
@@ -48,7 +48,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">82%</div>
+<div class="percent">65%</div>
 <p>successful</p>
 </div>
 </td>
@@ -82,6 +82,14 @@
 <a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html#givenArticleCommentInfo_whenRequesting_thenSavesNewArticleComment()">[view][POST] 댓글 등록 - 정상호출</a>
 </li>
 <li>
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html">View 컨트롤러 - 게시글</a>.
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html#givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView()">[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html">View 컨트롤러 - 게시글</a>.
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html#givenNothing_whenRequestingArticlesView_thenReturnsArticlesView()">[view][GET] 게시글 리스트 (게시판) 페이지 - 정상 호출</a>
+</li>
+<li>
 <a href="classes/com.marathon.board.controller.AuthControllerTest.html">인증 컨트롤러</a>.
 <a href="classes/com.marathon.board.controller.AuthControllerTest.html#givenNothing_whenTryingToLogIn_thenReturnsLogInView()">[View][Get] 로그인 테스트</a>
 </li>
@@ -91,19 +99,55 @@
 </li>
 <li>
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenDeleting_thenWorksFine()">Delete Test</a>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenHashtagNamesAndPageable_whenQueryingArticles_thenReturnsArticlePage()">[Querydsl] hashtag로 페이징된 게시글 검색하기</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenInserting_thenWorksFine()">Insert Test</a>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenNothing_whenQueryingHashtags_thenReturnsHashtagNames()">[Querydsl] 전체 hashtag 리스트에서 이름만 조회하기</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenSelecting_thenWorksFine()">Select Test</a>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenDeleting_thenWorksFine()">delete 테스트</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenUpdating_thenWorksFine()">Update Test</a>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenInserting_thenWorksFine()">insert 테스트</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenSelecting_thenWorksFine()">select 테스트</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
+<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenUpdating_thenWorksFine()">update 테스트</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenArticleId_whenDeletingArticle_thenDeletesArticle()">게시글의 ID를 입력하면, 게시글을 삭제한다</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenArticleInfo_whenSavingArticle_thenExtractsHashtagsFromContentAndSavesArticleWithExtractedHashtags()">게시글 정보를 입력하면, 본문에서 해시태그 정보를 추출하여 해시태그 정보가 포함된 게시글을 생성한다.</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenHashtag_whenSearchingArticlesViaHashtag_thenReturnsArticlesPage()">게시글을 해시태그 검색하면, 게시글 페이지를 반환한다.</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle()">게시글의 수정 정보를 입력하면, 게시글을 수정한다.</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenNonexistentArticleId_whenSearchingArticleWithComments_thenThrowsException()">댓글 달린 게시글이 없으면, 예외를 던진다.</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenNonexistentHashtag_whenSearchingArticlesViaHashtag_thenReturnsEmptyPage()">없는 해시태그를 검색하면, 빈 페이지를 반환한다.</a>
+</li>
+<li>
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
+<a href="classes/com.marathon.board.service.ArticleServiceTest.html#givenNothing_whenCalling_thenReturnsHashtags()">해시태그를 조회하면, 유니크 해시태그 리스트를 반환한다</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.util.FormDataEncoderTest.html">테스트 도구 - Form 데이터 인코더</a>.
@@ -116,7 +160,7 @@
 <ul class="linkList">
 <li>
 <a href="classes/com.marathon.board.controller.ArticleControllerTest.html">View 컨트롤러 - 게시글</a>.
-<a href="classes/com.marathon.board.controller.ArticleControllerTest.html#given_whenRequestingArticleSearchView_thenReturnArticleSearchView()">[view][GET] 게시글 검색전용페이지 - 정상 호출</a>
+<a href="classes/com.marathon.board.controller.ArticleControllerTest.html#givenNothing_whenRequestingArticleSearchView_thenReturnsArticleSearchView()">[view][GET] 게시글 검색 전용 페이지 - 정상 호출</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.controller.DataRestTest.html">Data REST 테스트</a>.
@@ -161,38 +205,38 @@
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0.007s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
 <td class="failures">
 <a href="packages/com.marathon.board.controller.html">com.marathon.board.controller</a>
 </td>
-<td>20</td>
-<td>3</td>
+<td>23</td>
+<td>5</td>
 <td>6</td>
-<td>0.560s</td>
-<td class="failures">78%</td>
+<td>0.762s</td>
+<td class="failures">70%</td>
 </tr>
 <tr>
 <td class="failures">
 <a href="packages/com.marathon.board.repository.html">com.marathon.board.repository</a>
 </td>
-<td>4</td>
-<td>4</td>
+<td>6</td>
+<td>6</td>
 <td>0</td>
-<td>0.003s</td>
+<td>0.006s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
-<td class="success">
+<td class="failures">
 <a href="packages/com.marathon.board.service.html">com.marathon.board.service</a>
 </td>
-<td>30</td>
+<td>33</td>
+<td>7</td>
 <td>0</td>
-<td>0</td>
-<td>0.296s</td>
-<td class="success">100%</td>
+<td>0.429s</td>
+<td class="failures">78%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -228,7 +272,7 @@
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.004s</td>
+<td>0.007s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
@@ -238,18 +282,18 @@
 <td>2</td>
 <td>1</td>
 <td>0</td>
-<td>0.209s</td>
+<td>0.262s</td>
 <td class="failures">50%</td>
 </tr>
 <tr>
-<td class="skipped">
+<td class="failures">
 <a href="classes/com.marathon.board.controller.ArticleControllerTest.html">com.marathon.board.controller.ArticleControllerTest</a>
 </td>
-<td>11</td>
-<td>0</td>
+<td>14</td>
+<td>2</td>
 <td>1</td>
-<td>0.347s</td>
-<td class="skipped">100%</td>
+<td>0.496s</td>
+<td class="failures">84%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -268,7 +312,7 @@
 <td>5</td>
 <td>0</td>
 <td>5</td>
-<td>0s</td>
+<td>0.001s</td>
 <td class="skipped">-</td>
 </tr>
 <tr>
@@ -278,17 +322,17 @@
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.003s</td>
+<td>0.002s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
 <td class="failures">
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">com.marathon.board.repository.JpaRepositoryTest</a>
 </td>
-<td>4</td>
-<td>4</td>
+<td>6</td>
+<td>6</td>
 <td>0</td>
-<td>0.003s</td>
+<td>0.006s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
@@ -298,18 +342,18 @@
 <td>6</td>
 <td>0</td>
 <td>0</td>
-<td>0.221s</td>
+<td>0.229s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
-<td class="success">
+<td class="failures">
 <a href="classes/com.marathon.board.service.ArticleServiceTest.html">com.marathon.board.service.ArticleServiceTest</a>
 </td>
-<td>13</td>
+<td>16</td>
+<td>7</td>
 <td>0</td>
-<td>0</td>
-<td>0.031s</td>
-<td class="success">100%</td>
+<td>0.158s</td>
+<td class="failures">56%</td>
 </tr>
 <tr>
 <td class="success">
@@ -318,7 +362,7 @@
 <td>11</td>
 <td>0</td>
 <td>0</td>
-<td>0.044s</td>
+<td>0.042s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
@@ -342,7 +386,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 1. 오전 9:56:19</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 16. 오후 6:04:29</p>
 </div>
 </div>
 </body>
