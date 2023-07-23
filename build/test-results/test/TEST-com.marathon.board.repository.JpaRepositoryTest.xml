@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JPA 연결 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-23T04:07:18" hostname="Jeongui-MacBookPro.local" time="0.832">
+<testsuite name="JPA 연결 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-23T05:02:25" hostname="Jeongui-MacBookPro.local" time="0.724">
   <properties/>
-  <testcase name="[Querydsl] hashtag로 페이징된 게시글 검색하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.583"/>
-  <testcase name="insert 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.099"/>
-  <testcase name="select 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.054"/>
+  <testcase name="[Querydsl] hashtag로 페이징된 게시글 검색하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.486"/>
+  <testcase name="insert 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.1"/>
+  <testcase name="select 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.055"/>
   <testcase name="[Querydsl] 전체 hashtag 리스트에서 이름만 조회하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.005"/>
-  <testcase name="delete 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.056"/>
-  <testcase name="update 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.024"/>
-  <system-out><![CDATA[2023-07-23T13:07:17.056+09:00  INFO 3194 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.repository.JpaRepositoryTest
+  <testcase name="delete 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.043"/>
+  <testcase name="update 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.02"/>
+  <system-out><![CDATA[2023-07-23T14:02:24.219+09:00  INFO 4645 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.repository.JpaRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,14 +17,14 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-23T13:07:17.087+09:00  INFO 3194 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Starting JpaRepositoryTest using Java 17.0.6 with PID 3194 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-23T13:07:17.087+09:00  INFO 3194 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : No active profile set, falling back to 1 default profile: "default"
-2023-07-23T13:07:17.188+09:00  INFO 3194 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-07-23T13:07:17.212+09:00  INFO 3194 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 4 JPA repository interfaces.
-2023-07-23T13:07:17.224+09:00  INFO 3194 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2023-07-23T13:07:17.248+09:00  INFO 3194 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:21a536f8-3cc5-47b7-99c8-ec5b5ce3f624;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2023-07-23T13:07:17.518+09:00  INFO 3194 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-07-23T13:07:17.531+09:00  INFO 3194 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-07-23T14:02:24.242+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Starting JpaRepositoryTest using Java 17.0.6 with PID 4645 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-23T14:02:24.242+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : No active profile set, falling back to 1 default profile: "default"
+2023-07-23T14:02:24.358+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-23T14:02:24.381+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
+2023-07-23T14:02:24.395+09:00  INFO 4645 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-07-23T14:02:24.420+09:00  INFO 4645 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:9ddb73a6-f135-4062-8eca-170b28c3119a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-07-23T14:02:24.693+09:00  INFO 4645 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-23T14:02:24.711+09:00  INFO 4645 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: 
     
     drop table if exists article cascade 
@@ -160,9 +160,9 @@ Hibernate:
        add constraint FK67dybe2dob8uvrr7fyicyb1no 
        foreign key (user_id) 
        references user_account
-2023-07-23T13:07:17.725+09:00  INFO 3194 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-07-23T13:07:17.725+09:00  INFO 3194 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-07-23T13:07:18.320+09:00  INFO 3194 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Started JpaRepositoryTest in 1.261 seconds (process running for 13.146)
+2023-07-23T14:02:24.871+09:00  INFO 4645 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-23T14:02:24.872+09:00  INFO 4645 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-23T14:02:25.476+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Started JpaRepositoryTest in 1.254 seconds (process running for 13.554)
 Hibernate: 
     select
         a1_0.id,
