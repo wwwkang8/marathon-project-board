@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="비즈니스 로직 - 댓글" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-23T04:07:19" hostname="Jeongui-MacBookPro.local" time="0.193">
+<testsuite name="비즈니스 로직 - 댓글" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-23T05:02:26" hostname="Jeongui-MacBookPro.local" time="0.069">
   <properties/>
-  <testcase name="댓글 ID를 입력하면, 댓글을 삭제한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.152"/>
-  <testcase name="댓글 저장을 시도했는데 맞는 게시글이 없으면, 경고 로그를 찍고 아무것도 안 한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.006"/>
-  <testcase name="게시글 ID로 조회하면, 해당하는 댓글 리스트를 반환한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.022"/>
-  <testcase name="댓글 정보를 입력하면, 댓글을 수정한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.003"/>
-  <testcase name="없는 댓글 정보를 수정하려고 하면, 경고 로그를 찍고 아무 것도 안 한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.002"/>
-  <testcase name="댓글 정보를 입력하면, 댓글을 저장한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.006"/>
+  <testcase name="댓글 ID를 입력하면, 댓글을 삭제한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.055"/>
+  <testcase name="댓글 저장을 시도했는데 맞는 게시글이 없으면, 경고 로그를 찍고 아무것도 안 한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.002"/>
+  <testcase name="게시글 ID로 조회하면, 해당하는 댓글 리스트를 반환한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.003"/>
+  <testcase name="댓글 정보를 입력하면, 댓글을 수정한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.002"/>
+  <testcase name="없는 댓글 정보를 수정하려고 하면, 경고 로그를 찍고 아무 것도 안 한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.001"/>
+  <testcase name="댓글 정보를 입력하면, 댓글을 저장한다." classname="com.marathon.board.service.ArticleCommentServiceTest" time="0.002"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[jakarta.persistence.EntityNotFoundException
 jakarta.persistence.EntityNotFoundException

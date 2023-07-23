@@ -1,15 +1,20 @@
 package com.marathon.board.service;
 
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import com.marathon.board.domain.Article;
+import com.marathon.board.domain.Hashtag;
 import com.marathon.board.domain.UserAccount;
 import com.marathon.board.domain.constant.SearchType;
 import com.marathon.board.dto.ArticleDto;
 import com.marathon.board.dto.ArticleWithCommentsDto;
 import com.marathon.board.dto.UserAccountDto;
 import com.marathon.board.repository.ArticleRepository;
+import com.marathon.board.repository.HashtagRepository;
 import com.marathon.board.repository.UserAccountRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +32,8 @@ public class ArticleService {
 
     private final ArticleRepository articleRepository;
     private final UserAccountRepository userAccountRepository;
+    private final HashtagService hashtagService;
+    private final HashtagRepository hashtagRepository;
 
     @Transactional(readOnly = true)
     public Page<ArticleDto> searchArticles(SearchType searchType, String searchKeyword, Pageable pageable) {
@@ -43,7 +50,9 @@ public class ArticleService {
             case CONTENT -> articleRepository.findByContentContaining(searchKeyword, pageable).map(ArticleDto::from);
             case ID -> articleRepository.findByUserAccount_UserIdContaining(searchKeyword, pageable).map(ArticleDto::from);
             case NICKNAME -> articleRepository.findByUserAccount_NicknameContaining(searchKeyword, pageable).map(ArticleDto::from);
-            case HASHTAG -> articleRepository.findByHashtagNames(null, pageable).map(ArticleDto::from);
+            case HASHTAG -> articleRepository.findByHashtagNames(
+                    Arrays.stream(searchKeyword.split(" ")).toList(),
+                    pageable).map(ArticleDto::from);
         };
 
     }
@@ -66,7 +75,11 @@ public class ArticleService {
 
     public void saveArticle(ArticleDto dto) {
         UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
-        articleRepository.save(dto.toEntity(userAccount));
+        Set<Hashtag> hashtags = renewHashtagsFromContent(dto.content());
+
+        Article article = dto.toEntity(userAccount);
+        article.addHashtags(hashtags);
+        articleRepository.save(article);
     }
 
     public void updateArticle(Long articleId, ArticleDto dto) {
@@ -81,7 +94,18 @@ public class ArticleService {
                 // record의 스펙이다. dto.getTitle()이 아니라 .title()로 값 가져오기 가능.
                 // java 13, 14에서 새로 나온 기능이다.get 이 없는 title을 볼 수 있다.
                 if(dto.content() != null) {article.setContent(dto.content());}
-                //article.setHashTag(dto.hashtag());
+
+                Set<Long> hashtagIds = article.getHashtags().stream()
+                                                .map(Hashtag::getId)
+                                                .collect(Collectors.toUnmodifiableSet());
+                article.clearHashtags();
+                articleRepository.flush();
+
+                hashtagIds.forEach(hashtagService::deleteHashtagWithoutArticles);
+
+                Set<Hashtag> hashtags = renewHashtagsFromContent(dto.content());
+                article.addHashtags(hashtags);
+
             }
 
         }catch(EntityNotFoundException e){
@@ -101,8 +125,15 @@ public class ArticleService {
 
     public void deleteArticle(long articleId, String userId) {
 
-        articleRepository.deleteByIdAndUserAccount_UserId(articleId, userId);
+        Article article = articleRepository.getReferenceById(articleId);
+        Set<Long> hashtagIds = article.getHashtags().stream()
+                                .map(Hashtag::getId)
+                                    .collect(Collectors.toUnmodifiableSet());
 
+        articleRepository.deleteByIdAndUserAccount_UserId(articleId, userId);
+        articleRepository.flush();
+
+        hashtagIds.forEach(hashtagService::deleteHashtagWithoutArticles);
     }
 
     public long getArticleCount() {
@@ -116,13 +147,13 @@ public class ArticleService {
      * -> 이 때 Querydsl이 필요하다.
      * */
     @Transactional(readOnly = true)
-    public Page<ArticleDto> searchArticlesViaHashtag(String hashtag, Pageable pageable) {
+    public Page<ArticleDto> searchArticlesViaHashtag(String hashtagName, Pageable pageable) {
 
-        if(hashtag == null || hashtag.isBlank()){
+        if(hashtagName == null || hashtagName.isBlank()){
             return Page.empty(pageable); // 해시태그 없으면 빈페이지 보내준다.
         }
 
-        return articleRepository.findByHashtagNames(null, pageable).map(ArticleDto::from);
+        return articleRepository.findByHashtagNames(List.of(hashtagName), pageable).map(ArticleDto::from);
 
     }
 
@@ -131,6 +162,22 @@ public class ArticleService {
      * */
     public List<String> getHashtags() {
 
-        return articleRepository.findAllDistinctHashtags();
+        return hashtagRepository.findAllHashtagNames(); //TODO : hashtagService에서 제공하면 더 좋을 것 같다.
+    }
+
+    private Set<Hashtag> renewHashtagsFromContent(String content) {
+
+        Set<String> hashtagNamesInContent = hashtagService.parseHashtagNames(content);
+        Set<Hashtag> hashtags = hashtagService.findHashtagsByNames(hashtagNamesInContent);
+        Set<String> existingHashtagNames = hashtags.stream()
+                                            .map(Hashtag::getHashtagName)
+                                            .collect(Collectors.toUnmodifiableSet());
+        hashtagNamesInContent.forEach(newHashtagName -> {
+            if (!existingHashtagNames.contains(newHashtagName)) {
+                hashtags.add(Hashtag.of(newHashtagName));
+            }
+        });
+
+        return hashtags;
     }
 }
