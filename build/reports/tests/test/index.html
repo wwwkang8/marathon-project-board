@@ -20,13 +20,13 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">64</div>
+<div class="counter">91</div>
 <p>tests</p>
 </div>
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">20</div>
+<div class="counter">13</div>
 <p>failures</p>
 </div>
 </td>
@@ -38,7 +38,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">1.205s</div>
+<div class="counter">2.145s</div>
 <p>duration</p>
 </div>
 </td>
@@ -48,7 +48,7 @@
 </td>
 <td>
 <div class="infoBox failures" id="successRate">
-<div class="percent">65%</div>
+<div class="percent">84%</div>
 <p>successful</p>
 </div>
 </td>
@@ -74,10 +74,6 @@
 <h2>Failed tests</h2>
 <ul class="linkList">
 <li>
-<a href="classes/com.marathon.board.BoardApplicationTests.html">BoardApplicationTests</a>.
-<a href="classes/com.marathon.board.BoardApplicationTests.html#contextLoads()">contextLoads()</a>
-</li>
-<li>
 <a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html">View 컨트롤러 - 댓글</a>.
 <a href="classes/com.marathon.board.controller.ArticleCommentControllerTest.html#givenArticleCommentInfo_whenRequesting_thenSavesNewArticleComment()">[view][POST] 댓글 등록 - 정상호출</a>
 </li>
@@ -96,30 +92,6 @@
 <li>
 <a href="classes/com.marathon.board.controller.MainControllerTest.html">MainControllerTest</a>.
 <a href="classes/com.marathon.board.controller.MainControllerTest.html#givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage()">givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage()</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenHashtagNamesAndPageable_whenQueryingArticles_thenReturnsArticlePage()">[Querydsl] hashtag로 페이징된 게시글 검색하기</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenNothing_whenQueryingHashtags_thenReturnsHashtagNames()">[Querydsl] 전체 hashtag 리스트에서 이름만 조회하기</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenDeleting_thenWorksFine()">delete 테스트</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenInserting_thenWorksFine()">insert 테스트</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenSelecting_thenWorksFine()">select 테스트</a>
-</li>
-<li>
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">JPA 연결 테스트</a>.
-<a href="classes/com.marathon.board.repository.JpaRepositoryTest.html#givenTestData_whenUpdating_thenWorksFine()">update 테스트</a>
 </li>
 <li>
 <a href="classes/com.marathon.board.service.ArticleServiceTest.html">비즈니스 로직 - 게시글</a>.
@@ -199,14 +171,14 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="packages/com.marathon.board.html">com.marathon.board</a>
 </td>
 <td>1</td>
-<td>1</td>
 <td>0</td>
-<td>0.007s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.180s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -215,28 +187,28 @@
 <td>23</td>
 <td>5</td>
 <td>6</td>
-<td>0.762s</td>
+<td>0.705s</td>
 <td class="failures">70%</td>
 </tr>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="packages/com.marathon.board.repository.html">com.marathon.board.repository</a>
 </td>
 <td>6</td>
-<td>6</td>
 <td>0</td>
-<td>0.006s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.821s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="failures">
 <a href="packages/com.marathon.board.service.html">com.marathon.board.service</a>
 </td>
-<td>33</td>
+<td>60</td>
 <td>7</td>
 <td>0</td>
-<td>0.429s</td>
-<td class="failures">78%</td>
+<td>0.438s</td>
+<td class="failures">88%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -266,14 +238,14 @@
 </thead>
 <tbody>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="classes/com.marathon.board.BoardApplicationTests.html">com.marathon.board.BoardApplicationTests</a>
 </td>
 <td>1</td>
-<td>1</td>
 <td>0</td>
-<td>0.007s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.180s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="failures">
@@ -282,7 +254,7 @@
 <td>2</td>
 <td>1</td>
 <td>0</td>
-<td>0.262s</td>
+<td>0.220s</td>
 <td class="failures">50%</td>
 </tr>
 <tr>
@@ -292,7 +264,7 @@
 <td>14</td>
 <td>2</td>
 <td>1</td>
-<td>0.496s</td>
+<td>0.480s</td>
 <td class="failures">84%</td>
 </tr>
 <tr>
@@ -302,7 +274,7 @@
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.001s</td>
+<td>0.002s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
@@ -312,7 +284,7 @@
 <td>5</td>
 <td>0</td>
 <td>5</td>
-<td>0.001s</td>
+<td>0s</td>
 <td class="skipped">-</td>
 </tr>
 <tr>
@@ -322,18 +294,18 @@
 <td>1</td>
 <td>1</td>
 <td>0</td>
-<td>0.002s</td>
+<td>0.003s</td>
 <td class="failures">0%</td>
 </tr>
 <tr>
-<td class="failures">
+<td class="success">
 <a href="classes/com.marathon.board.repository.JpaRepositoryTest.html">com.marathon.board.repository.JpaRepositoryTest</a>
 </td>
 <td>6</td>
-<td>6</td>
 <td>0</td>
-<td>0.006s</td>
-<td class="failures">0%</td>
+<td>0</td>
+<td>0.821s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="success">
@@ -342,7 +314,7 @@
 <td>6</td>
 <td>0</td>
 <td>0</td>
-<td>0.229s</td>
+<td>0.191s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
@@ -352,8 +324,18 @@
 <td>16</td>
 <td>7</td>
 <td>0</td>
-<td>0.158s</td>
+<td>0.156s</td>
 <td class="failures">56%</td>
+</tr>
+<tr>
+<td class="success">
+<a href="classes/com.marathon.board.service.HashtagServiceTest.html">com.marathon.board.service.HashtagServiceTest</a>
+</td>
+<td>27</td>
+<td>0</td>
+<td>0</td>
+<td>0.054s</td>
+<td class="success">100%</td>
 </tr>
 <tr>
 <td class="success">
@@ -362,7 +344,7 @@
 <td>11</td>
 <td>0</td>
 <td>0</td>
-<td>0.042s</td>
+<td>0.037s</td>
 <td class="success">100%</td>
 </tr>
 <tr>
@@ -386,7 +368,7 @@
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 16. 오후 6:04:29</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 23. 오후 1:07:20</p>
 </div>
 </div>
 </body>

@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.496s</div>
+<div class="counter">0.480s</div>
 <p>duration</p>
 </div>
 </td>
@@ -289,31 +289,31 @@
 <tr>
 <td class="failures">[view][GET] 게시글 페이지 - 정상 호출, 인증된 사용자</td>
 <td class="failures">givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView()</td>
-<td class="failures">0.041s</td>
+<td class="failures">0.033s</td>
 <td class="failures">failed</td>
 </tr>
 <tr>
 <td class="success">[view][GET] 게시글 수정 페이지 - 정상 호출, 인증된 사용자</td>
 <td class="success">givenAuthorizedUser_whenRequesting_thenReturnsUpdatedArticlePage()</td>
-<td class="success">0.020s</td>
+<td class="success">0.023s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[view][GET] 게시글 해시태그 검색 페이지 - 정상 호출, 해시태그 입력</td>
 <td class="success">givenHashtag_whenRequestingArticleSearchHashtagView_thenReturnsArticleSearchHashtagView()</td>
-<td class="success">0.270s</td>
+<td class="success">0.261s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[view][POST] 새 게시글 등록 - 정상 호출</td>
 <td class="success">givenNewArticleInfo_whenRequesting_thenSavesNewArticle()</td>
-<td class="success">0.015s</td>
+<td class="success">0.010s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[view][GET] 게시글 페이지 - 인증 없을 땐 로그인 페이지로 이동</td>
 <td class="success">givenNothing_whenRequestingArticlePage_thenRedirectsToLoginPage()</td>
-<td class="success">0.014s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -337,13 +337,13 @@
 <tr>
 <td class="success">[view][GET] 게시글 수정 페이지 - 인증 없을 땐 로그인 페이지로 이동</td>
 <td class="success">givenNothing_whenRequesting_thenRedirectsToLoginPage()</td>
-<td class="success">0.011s</td>
+<td class="success">0.008s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[view][GET] 새 게시글 작성 페이지</td>
 <td class="success">givenNothing_whenRequesting_thenReturnsNewArticlePage()</td>
-<td class="success">0.011s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -355,13 +355,13 @@
 <tr>
 <td class="success">[view][GET] 게시글 리스트 (게시판) 페이지 - 검색어와 함께 호출</td>
 <td class="success">givenSearchKeyword_whenSearchingArticlesView_thenReturnsArticlesView()</td>
-<td class="success">0.023s</td>
+<td class="success">0.030s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">[view][POST] 게시글 수정 - 정상 호출</td>
 <td class="success">givenUpdatedArticleInfo_whenRequesting_thenUpdatesNewArticle()</td>
-<td class="success">0.033s</td>
+<td class="success">0.037s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -369,8 +369,8 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-07-16T18:04:24.392+09:00  INFO 5112 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleControllerTest]: ArticleControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-07-16T18:04:24.398+09:00  INFO 5112 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleControllerTest
+<pre>2023-07-23T13:07:15.538+09:00  INFO 3194 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleControllerTest]: ArticleControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-07-23T13:07:15.547+09:00  INFO 3194 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -380,30 +380,30 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-16T18:04:24.436+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Starting ArticleControllerTest using Java 17.0.6 with PID 5112 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-16T18:04:24.436+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-07-16T18:04:24.760+09:00  INFO 5112 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-07-16T18:04:24.773+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
-2023-07-16T18:04:24.791+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2023-07-16T18:04:24.797+09:00  INFO 5112 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ae20523, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a282c78, org.springframework.security.web.context.SecurityContextHolderFilter@ffd26d1, org.springframework.security.web.header.HeaderWriterFilter@544ee437, org.springframework.security.web.csrf.CsrfFilter@36e23af, org.springframework.security.web.authentication.logout.LogoutFilter@2f229f60, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@310045fc, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5410bbdf, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@2700609f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7dfc0fda, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@775c865f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@141cee26, org.springframework.security.web.access.ExceptionTranslationFilter@5e4a9c16, org.springframework.security.web.access.intercept.AuthorizationFilter@6dc010a2]
-2023-07-16T18:04:24.823+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-07-16T18:04:24.829+09:00 DEBUG 5112 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-07-16T18:04:24.860+09:00  INFO 5112 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-07-16T18:04:24.860+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-07-16T18:04:24.861+09:00  INFO 5112 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2023-07-16T18:04:24.875+09:00  INFO 5112 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Started ArticleControllerTest in 0.469 seconds (process running for 11.656)
-2023-07-16T18:04:24.892+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticle(Long, BoardPrincipal, ArticleRequest)
-2023-07-16T18:04:24.908+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-16T18:04:24.926+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:24.927+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:24.927+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:24.928+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:24.940+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.200+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.201+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.201+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.202+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.206+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:15.587+09:00  INFO 3194 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Starting ArticleControllerTest using Java 17.0.6 with PID 3194 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-23T13:07:15.587+09:00  INFO 3194 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-07-23T13:07:15.874+09:00  INFO 3194 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-23T13:07:15.884+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 10 mappings in 'requestMappingHandlerMapping'
+2023-07-23T13:07:15.899+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-07-23T13:07:15.904+09:00  INFO 3194 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@379899f4, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a4eb337, org.springframework.security.web.context.SecurityContextHolderFilter@4662fa99, org.springframework.security.web.header.HeaderWriterFilter@5a49c1e, org.springframework.security.web.csrf.CsrfFilter@2bb7229e, org.springframework.security.web.authentication.logout.LogoutFilter@6b13f456, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@435d648d, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7277fa93, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@cec9f23, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@54539319, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5312c883, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@243deb3f, org.springframework.security.web.access.ExceptionTranslationFilter@52baaf87, org.springframework.security.web.access.intercept.AuthorizationFilter@63eebb56]
+2023-07-23T13:07:15.925+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-23T13:07:15.932+09:00 DEBUG 3194 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-23T13:07:15.960+09:00  INFO 3194 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-07-23T13:07:15.960+09:00  INFO 3194 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-07-23T13:07:15.961+09:00  INFO 3194 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-07-23T13:07:15.975+09:00  INFO 3194 --- [    Test worker] c.m.b.controller.ArticleControllerTest   : Started ArticleControllerTest in 0.424 seconds (process running for 10.801)
+2023-07-23T13:07:15.994+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticle(Long, BoardPrincipal, ArticleRequest)
+2023-07-23T13:07:16.008+09:00 DEBUG 3194 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-23T13:07:16.034+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.036+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.036+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.037+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.049+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.294+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.294+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.295+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.295+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.298+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -428,7 +428,7 @@ ModelAndView:
         View name = articles/detail
              View = null
         Attribute = article
-            value = ArticleWithCommentsResponse[id=1, title=title, content=content, hashtags=[java], createdAt=2023-07-16T18:04:25.198889, email=uno@mail.com, nickname=Uno, userId=uno, articleCommentResponse=[]]
+            value = ArticleWithCommentsResponse[id=1, title=title, content=content, hashtags=[java], createdAt=2023-07-23T13:07:16.293109, email=uno@mail.com, nickname=Uno, userId=uno, articleCommentResponse=[]]
            errors = []
         Attribute = articleComments
             value = []
@@ -576,38 +576,38 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-07-16T18:04:25.236+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.236+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.237+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.237+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.240+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.264+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.264+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.265+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.269+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.288+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-16T18:04:25.289+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-16T18:04:25.289+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-16T18:04:25.290+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
-2023-07-16T18:04:25.290+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.303+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:25.304+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:25.305+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:25.305+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
-2023-07-16T18:04:25.307+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.325+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.325+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.326+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.329+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
-2023-07-16T18:04:25.343+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#deleteArticle(Long, BoardPrincipal)
-2023-07-16T18:04:25.345+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-16T18:04:25.354+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.354+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.355+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
-2023-07-16T18:04:25.373+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.374+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.374+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
-2023-07-16T18:04:25.376+09:00 DEBUG 5112 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.329+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.330+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.330+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.331+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.334+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.360+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.360+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.360+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.365+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.392+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-23T13:07:16.392+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-23T13:07:16.393+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-23T13:07:16.393+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articleForm(ModelMap)
+2023-07-23T13:07:16.394+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.403+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.403+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.404+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.404+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#searchArticleHashtag(String, Pageable, ModelMap)
+2023-07-23T13:07:16.405+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.421+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.421+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.421+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.424+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2023-07-23T13:07:16.443+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#deleteArticle(Long, BoardPrincipal)
+2023-07-23T13:07:16.444+09:00 DEBUG 3194 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-23T13:07:16.451+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.452+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.452+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#article(ModelMap, Long)
+2023-07-23T13:07:16.465+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.465+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.466+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#articles(SearchType, String, Pageable, ModelMap)
+2023-07-23T13:07:16.467+09:00 DEBUG 3194 --- [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
 
 MockHttpServletRequest:
       HTTP Method = GET
@@ -768,11 +768,11 @@ MockHttpServletResponse:
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
-2023-07-16T18:04:25.392+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#postNewArticle(BoardPrincipal, ArticleRequest)
-2023-07-16T18:04:25.394+09:00 DEBUG 5112 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-16T18:04:25.408+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.409+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
-2023-07-16T18:04:25.409+09:00 DEBUG 5112 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.483+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#postNewArticle(BoardPrincipal, ArticleRequest)
+2023-07-23T13:07:16.485+09:00 DEBUG 3194 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-23T13:07:16.496+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.497+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
+2023-07-23T13:07:16.497+09:00 DEBUG 3194 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleController#updateArticleForm(Long, ModelMap)
 </pre>
 </span>
 </div>
@@ -784,7 +784,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 16. 오후 6:04:29</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 23. 오후 1:07:20</p>
 </div>
 </div>
 </body>
