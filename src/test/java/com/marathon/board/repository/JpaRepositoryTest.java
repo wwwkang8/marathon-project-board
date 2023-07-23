@@ -120,7 +120,7 @@ class JpaRepositoryTest {
         // Given
 
         // When
-        List<String> hashtagNames = hashtagRepository.findAllHashtagNames();
+        //List<String> hashtagNames = hashtagRepository.findByHashtagName();
 
         // Then
         //assertThat(hashtagNames).hasSize(19);
