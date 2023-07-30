@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.005s</div>
+<div class="counter">0.006s</div>
 <p>duration</p>
 </div>
 </td>
@@ -79,7 +79,7 @@
 </thead>
 <tr>
 <td class="success">contextLoads()</td>
-<td class="success">0.005s</td>
+<td class="success">0.006s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -87,8 +87,8 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-07-23T14:02:19.095+09:00  INFO 4645 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.BoardApplicationTests]: BoardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-07-23T14:02:19.111+09:00  INFO 4645 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.BoardApplicationTests
+<pre>2023-07-30T17:16:24.742+09:00  INFO 3152 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.BoardApplicationTests]: BoardApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-07-30T17:16:24.754+09:00  INFO 3152 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.BoardApplicationTests
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -98,16 +98,16 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-23T14:02:19.173+09:00  INFO 4645 --- [    Test worker] c.marathon.board.BoardApplicationTests   : Starting BoardApplicationTests using Java 17.0.6 with PID 4645 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-23T14:02:19.174+09:00  INFO 4645 --- [    Test worker] c.marathon.board.BoardApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-07-23T14:02:19.803+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-07-23T14:02:19.865+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 4 JPA repository interfaces.
-2023-07-23T14:02:20.505+09:00  INFO 4645 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-07-23T14:02:20.567+09:00  INFO 4645 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
-2023-07-23T14:02:20.770+09:00  INFO 4645 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-07-23T14:02:20.967+09:00  INFO 4645 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a28b6d0
-2023-07-23T14:02:20.970+09:00  INFO 4645 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-07-23T14:02:21.029+09:00  INFO 4645 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-07-30T17:16:24.805+09:00  INFO 3152 --- [    Test worker] c.marathon.board.BoardApplicationTests   : Starting BoardApplicationTests using Java 17.0.6 with PID 3152 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-30T17:16:24.805+09:00  INFO 3152 --- [    Test worker] c.marathon.board.BoardApplicationTests   : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-07-30T17:16:25.536+09:00  INFO 3152 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-30T17:16:25.605+09:00  INFO 3152 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60 ms. Found 4 JPA repository interfaces.
+2023-07-30T17:16:25.997+09:00  INFO 3152 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-30T17:16:26.076+09:00  INFO 3152 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-07-30T17:16:26.275+09:00  INFO 3152 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-30T17:16:26.500+09:00  INFO 3152 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a28b6d0
+2023-07-30T17:16:26.502+09:00  INFO 3152 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-30T17:16:26.610+09:00  INFO 3152 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
 Hibernate: 
     
     alter table if exists article 
@@ -175,6 +175,7 @@ Hibernate:
         modified_at timestamp(6) not null,
         modified_by varchar(100) not null,
         content varchar(500) not null,
+        parent_comment_id bigint,
         article_id bigint not null,
         user_id varchar(50) not null,
         primary key (id)
@@ -263,17 +264,17 @@ Hibernate:
        add constraint FK67dybe2dob8uvrr7fyicyb1no 
        foreign key (user_id) 
        references user_account
-2023-07-23T14:02:22.042+09:00  INFO 4645 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-07-23T14:02:22.054+09:00  INFO 4645 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-07-23T14:02:23.236+09:00  INFO 4645 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-07-23T14:02:23.248+09:00 DEBUG 4645 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
-2023-07-23T14:02:23.314+09:00 DEBUG 4645 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /api/explorer/**] in 'resourceHandlerMapping'
-2023-07-23T14:02:23.593+09:00  INFO 4645 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
-2023-07-23T14:02:23.637+09:00  INFO 4645 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@55de1b68, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2040722f, org.springframework.security.web.context.SecurityContextHolderFilter@6b2cbea, org.springframework.security.web.header.HeaderWriterFilter@4a1a9f57, org.springframework.security.web.csrf.CsrfFilter@33cbd883, org.springframework.security.web.authentication.logout.LogoutFilter@248ad8a1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@fe32f34, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@5fefb35c, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@cfec1ec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bd0047f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@41116c0e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1af2c5c8, org.springframework.security.web.access.ExceptionTranslationFilter@735b2605, org.springframework.security.web.access.intercept.AuthorizationFilter@62b9d56e]
-2023-07-23T14:02:23.773+09:00 DEBUG 4645 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-07-23T14:02:23.787+09:00 DEBUG 4645 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-07-23T14:02:23.952+09:00  INFO 4645 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/board'
-2023-07-23T14:02:24.147+09:00  INFO 4645 --- [    Test worker] c.marathon.board.BoardApplicationTests   : Started BoardApplicationTests in 5.029 seconds (process running for 12.225)
+2023-07-30T17:16:27.776+09:00  INFO 3152 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-30T17:16:27.788+09:00  INFO 3152 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-30T17:16:29.018+09:00  INFO 3152 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-30T17:16:29.031+09:00 DEBUG 3152 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 13 mappings in 'requestMappingHandlerMapping'
+2023-07-30T17:16:29.094+09:00 DEBUG 3152 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /api/explorer/**] in 'resourceHandlerMapping'
+2023-07-30T17:16:29.356+09:00  INFO 3152 --- [    Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 13 endpoint(s) beneath base path '/actuator'
+2023-07-30T17:16:29.392+09:00  INFO 3152 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c67a17d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@74f6fa34, org.springframework.security.web.context.SecurityContextHolderFilter@308034aa, org.springframework.security.web.header.HeaderWriterFilter@53534c15, org.springframework.security.web.csrf.CsrfFilter@5c10216f, org.springframework.security.web.authentication.logout.LogoutFilter@69b9ea1d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6a4484e6, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6317f6d, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@1b5860fb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6dc6608c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4fcbb165, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5575b4c2, org.springframework.security.web.access.ExceptionTranslationFilter@31b273b2, org.springframework.security.web.access.intercept.AuthorizationFilter@24697504]
+2023-07-30T17:16:29.525+09:00 DEBUG 3152 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-30T17:16:29.539+09:00 DEBUG 3152 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-30T17:16:29.695+09:00  INFO 3152 --- [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:5432/board'
+2023-07-30T17:16:29.880+09:00  INFO 3152 --- [    Test worker] c.marathon.board.BoardApplicationTests   : Started BoardApplicationTests in 5.118 seconds (process running for 12.438)
 </pre>
 </span>
 </div>
@@ -285,7 +286,7 @@ Hibernate:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 23. 오후 2:02:26</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 30. 오후 5:16:32</p>
 </div>
 </div>
 </body>
