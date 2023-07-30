@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="JPA 연결 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-23T05:02:25" hostname="Jeongui-MacBookPro.local" time="0.724">
+<testsuite name="JPA 연결 테스트" tests="6" skipped="0" failures="0" errors="0" timestamp="2023-07-30T08:16:31" hostname="Jeongui-MacBookPro.local" time="0.703">
   <properties/>
-  <testcase name="[Querydsl] hashtag로 페이징된 게시글 검색하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.486"/>
-  <testcase name="insert 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.1"/>
-  <testcase name="select 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.055"/>
-  <testcase name="[Querydsl] 전체 hashtag 리스트에서 이름만 조회하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.005"/>
-  <testcase name="delete 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.043"/>
-  <testcase name="update 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.02"/>
-  <system-out><![CDATA[2023-07-23T14:02:24.219+09:00  INFO 4645 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.repository.JpaRepositoryTest
+  <testcase name="[Querydsl] hashtag로 페이징된 게시글 검색하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.47"/>
+  <testcase name="insert 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.079"/>
+  <testcase name="select 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.058"/>
+  <testcase name="[Querydsl] 전체 hashtag 리스트에서 이름만 조회하기" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.004"/>
+  <testcase name="delete 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.059"/>
+  <testcase name="update 테스트" classname="com.marathon.board.repository.JpaRepositoryTest" time="0.019"/>
+  <system-out><![CDATA[2023-07-30T17:16:29.970+09:00  INFO 3152 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.repository.JpaRepositoryTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -17,14 +17,14 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-23T14:02:24.242+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Starting JpaRepositoryTest using Java 17.0.6 with PID 4645 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-23T14:02:24.242+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : No active profile set, falling back to 1 default profile: "default"
-2023-07-23T14:02:24.358+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-07-23T14:02:24.381+09:00  INFO 4645 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 4 JPA repository interfaces.
-2023-07-23T14:02:24.395+09:00  INFO 4645 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
-2023-07-23T14:02:24.420+09:00  INFO 4645 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:9ddb73a6-f135-4062-8eca-170b28c3119a;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
-2023-07-23T14:02:24.693+09:00  INFO 4645 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-07-23T14:02:24.711+09:00  INFO 4645 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2023-07-30T17:16:29.996+09:00  INFO 3152 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Starting JpaRepositoryTest using Java 17.0.6 with PID 3152 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-30T17:16:29.996+09:00  INFO 3152 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : No active profile set, falling back to 1 default profile: "default"
+2023-07-30T17:16:30.084+09:00  INFO 3152 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-30T17:16:30.103+09:00  INFO 3152 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 4 JPA repository interfaces.
+2023-07-30T17:16:30.115+09:00  INFO 3152 --- [    Test worker] beddedDataSourceBeanFactoryPostProcessor : Replacing 'dataSource' DataSource bean with embedded version
+2023-07-30T17:16:30.139+09:00  INFO 3152 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:7e40e865-49e1-4451-814c-37e63464b6fa;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2023-07-30T17:16:30.387+09:00  INFO 3152 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-30T17:16:30.399+09:00  INFO 3152 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
 Hibernate: 
     
     drop table if exists article cascade 
@@ -72,6 +72,7 @@ Hibernate:
         modified_at timestamp(6) not null,
         modified_by varchar(100) not null,
         content varchar(500) not null,
+        parent_comment_id bigint,
         article_id bigint not null,
         user_id varchar(50) not null,
         primary key (id)
@@ -160,9 +161,9 @@ Hibernate:
        add constraint FK67dybe2dob8uvrr7fyicyb1no 
        foreign key (user_id) 
        references user_account
-2023-07-23T14:02:24.871+09:00  INFO 4645 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-07-23T14:02:24.872+09:00  INFO 4645 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-07-23T14:02:25.476+09:00  INFO 4645 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Started JpaRepositoryTest in 1.254 seconds (process running for 13.554)
+2023-07-30T17:16:30.559+09:00  INFO 3152 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-30T17:16:30.559+09:00  INFO 3152 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-30T17:16:31.197+09:00  INFO 3152 --- [    Test worker] c.m.board.repository.JpaRepositoryTest   : Started JpaRepositoryTest in 1.222 seconds (process running for 13.756)
 Hibernate: 
     select
         a1_0.id,
@@ -331,6 +332,7 @@ Hibernate:
         a1_0.created_by,
         a1_0.modified_at,
         a1_0.modified_by,
+        a1_0.parent_comment_id,
         u1_0.user_id,
         u1_0.created_at,
         u1_0.created_by,
@@ -349,6 +351,55 @@ Hibernate:
         a1_0.article_id=? 
     order by
         a1_0.created_at desc
+Hibernate: 
+    select
+        c1_0.parent_comment_id,
+        c1_0.id,
+        a1_0.id,
+        a1_0.content,
+        a1_0.created_at,
+        a1_0.created_by,
+        a1_0.modified_at,
+        a1_0.modified_by,
+        a1_0.title,
+        u1_0.user_id,
+        u1_0.created_at,
+        u1_0.created_by,
+        u1_0.email,
+        u1_0.memo,
+        u1_0.modified_at,
+        u1_0.modified_by,
+        u1_0.nickname,
+        u1_0.user_password,
+        c1_0.content,
+        c1_0.created_at,
+        c1_0.created_by,
+        c1_0.modified_at,
+        c1_0.modified_by,
+        u2_0.user_id,
+        u2_0.created_at,
+        u2_0.created_by,
+        u2_0.email,
+        u2_0.memo,
+        u2_0.modified_at,
+        u2_0.modified_by,
+        u2_0.nickname,
+        u2_0.user_password 
+    from
+        article_comment c1_0 
+    left join
+        article a1_0 
+            on a1_0.id=c1_0.article_id 
+    left join
+        user_account u1_0 
+            on u1_0.user_id=a1_0.user_id 
+    left join
+        user_account u2_0 
+            on u2_0.user_id=c1_0.user_id 
+    where
+        c1_0.parent_comment_id in(?,?,?) 
+    order by
+        c1_0.created_at asc
 Hibernate: 
     delete 
     from

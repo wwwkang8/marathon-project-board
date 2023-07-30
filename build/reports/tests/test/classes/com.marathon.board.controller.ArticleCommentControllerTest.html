@@ -185,13 +185,13 @@
 <tr>
 <td class="success">[view][GET] 댓글 삭제 - 정상 호출</td>
 <td class="success">givenArticleCommentIdToDelete_whenRequesting_thenDeletesArticleComment()</td>
-<td class="success">0.194s</td>
+<td class="success">0.185s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="failures">[view][POST] 댓글 등록 - 정상호출</td>
 <td class="failures">givenArticleCommentInfo_whenRequesting_thenSavesNewArticleComment()</td>
-<td class="failures">0.054s</td>
+<td class="failures">0.063s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -199,14 +199,14 @@
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>14:02:13.275 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ArticleCommentControllerTest]: using SpringBootContextLoader
-14:02:13.282 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.marathon.board.controller.ArticleCommentControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-14:02:13.283 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleCommentControllerTest]: ArticleCommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-14:02:13.348 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using ContextCustomizers for test class [ArticleCommentControllerTest]: [DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, Customizer, ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer]
-14:02:13.463 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/jeonghokang/IdeaProjects/marathon-project-board2/build/classes/java/main/com/marathon/board/BoardApplication.class]
-14:02:13.465 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleCommentControllerTest
-14:02:13.495 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners for test class [ArticleCommentControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-14:02:13.497 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [ArticleCommentControllerTest], class annotated with @DirtiesContext [false] with mode [null]
+<pre>17:16:18.829 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ArticleCommentControllerTest]: using SpringBootContextLoader
+17:16:18.837 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.marathon.board.controller.ArticleCommentControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+17:16:18.839 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.marathon.board.controller.ArticleCommentControllerTest]: ArticleCommentControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:16:18.918 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using ContextCustomizers for test class [ArticleCommentControllerTest]: [DisableAutoConfigurationContextCustomizer, DisableObservabilityContextCustomizer, TypeExcludeFiltersContextCustomizer, PropertyMappingContextCustomizer, Customizer, ImportsContextCustomizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer]
+17:16:19.040 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/jeonghokang/IdeaProjects/marathon-project-board2/build/classes/java/main/com/marathon/board/BoardApplication.class]
+17:16:19.042 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.ArticleCommentControllerTest
+17:16:19.074 [Test worker] DEBUG org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTestContextBootstrapper - Using TestExecutionListeners for test class [ArticleCommentControllerTest]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, WithSecurityContextTestExecutionListener, EventPublishingTestExecutionListener, ReactorContextTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+17:16:19.077 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [ArticleCommentControllerTest], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -216,27 +216,27 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-23T14:02:14.110+09:00  INFO 4645 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Starting ArticleCommentControllerTest using Java 17.0.6 with PID 4645 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-23T14:02:14.112+09:00  INFO 4645 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-07-23T14:02:16.151+09:00  INFO 4645 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2023-07-23T14:02:16.227+09:00 DEBUG 4645 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
-2023-07-23T14:02:16.310+09:00 DEBUG 4645 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2023-07-23T14:02:16.343+09:00  INFO 4645 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ba562e0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a51336a, org.springframework.security.web.context.SecurityContextHolderFilter@5464b97c, org.springframework.security.web.header.HeaderWriterFilter@5ba184fc, org.springframework.security.web.csrf.CsrfFilter@24a8e40d, org.springframework.security.web.authentication.logout.LogoutFilter@4537880f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5f6e2ad9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a4b288a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4d8056bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f07930a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13c90c06, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42211e04, org.springframework.security.web.access.ExceptionTranslationFilter@75dc1c1c, org.springframework.security.web.access.intercept.AuthorizationFilter@32a033b6]
-2023-07-23T14:02:16.421+09:00 DEBUG 4645 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2023-07-23T14:02:16.461+09:00 DEBUG 4645 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
-2023-07-23T14:02:16.614+09:00  INFO 4645 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2023-07-23T14:02:16.615+09:00  INFO 4645 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2023-07-23T14:02:16.617+09:00  INFO 4645 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2023-07-23T14:02:16.663+09:00  INFO 4645 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Started ArticleCommentControllerTest in 3.101 seconds (process running for 4.741)
-2023-07-23T14:02:16.814+09:00 DEBUG 4645 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleCommentController#deleteArticleComment(Long, BoardPrincipal, Long)
-2023-07-23T14:02:16.842+09:00 DEBUG 4645 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
-2023-07-23T14:02:16.917+09:00 DEBUG 4645 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
-2023-07-23T14:02:16.920+09:00 DEBUG 4645 --- [    Test worker] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
+2023-07-30T17:16:19.613+09:00  INFO 3152 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Starting ArticleCommentControllerTest using Java 17.0.6 with PID 3152 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-30T17:16:19.615+09:00  INFO 3152 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-07-30T17:16:21.547+09:00  INFO 3152 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-30T17:16:21.613+09:00 DEBUG 3152 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 4 mappings in 'requestMappingHandlerMapping'
+2023-07-30T17:16:21.695+09:00 DEBUG 3152 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2023-07-30T17:16:21.729+09:00  INFO 3152 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@ba562e0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5a51336a, org.springframework.security.web.context.SecurityContextHolderFilter@5464b97c, org.springframework.security.web.header.HeaderWriterFilter@5ba184fc, org.springframework.security.web.csrf.CsrfFilter@24a8e40d, org.springframework.security.web.authentication.logout.LogoutFilter@4537880f, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5f6e2ad9, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@4a4b288a, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4d8056bf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2f07930a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@13c90c06, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@42211e04, org.springframework.security.web.access.ExceptionTranslationFilter@75dc1c1c, org.springframework.security.web.access.intercept.AuthorizationFilter@32a033b6]
+2023-07-30T17:16:21.807+09:00 DEBUG 3152 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2023-07-30T17:16:21.850+09:00 DEBUG 3152 --- [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2023-07-30T17:16:21.993+09:00  INFO 3152 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-07-30T17:16:21.993+09:00  INFO 3152 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-07-30T17:16:21.995+09:00  INFO 3152 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-07-30T17:16:22.034+09:00  INFO 3152 --- [    Test worker] c.m.b.c.ArticleCommentControllerTest     : Started ArticleCommentControllerTest in 2.887 seconds (process running for 4.593)
+2023-07-30T17:16:22.175+09:00 DEBUG 3152 --- [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.marathon.board.controller.ArticleCommentController#deleteArticleComment(Long, BoardPrincipal, Long)
+2023-07-30T17:16:22.204+09:00 DEBUG 3152 --- [    Test worker] o.s.web.servlet.view.RedirectView        : View name 'redirect:', model {}
+2023-07-30T17:16:22.284+09:00 DEBUG 3152 --- [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]
+2023-07-30T17:16:22.287+09:00 DEBUG 3152 --- [    Test worker] o.s.w.s.r.ResourceHttpRequestHandler     : Resource not found
 
 MockHttpServletRequest:
       HTTP Method = POST
       Request URI = /comment/new
-       Parameters = {articleId=[1], content=[test comment], _csrf=[7D_GZTf-Fz6KPLPbWGyzeEBROFxKJK4ZjS7NtHA9uOMMAi6e3Vv_XQLILwenWIfob0GHHXI3FT5_F540vxyv0EEF2oVqYB77]}
+       Parameters = {articleId=[1], content=[test comment], _csrf=[YNZqJZPUP2Gznp-cp8zeCJiDxVQoma7hpSIjQ5ZPlOyJJ39MWOBYQfawWlOeqa75kOHqMfzn6DURrM3MnBsadKZ9996wH0l1]}
           Headers = [Content-Type:&quot;application/x-www-form-urlencoded;charset=UTF-8&quot;, Content-Length:&quot;34&quot;]
              Body = articleId=1&amp;content=test%20comment
     Session Attrs = {SPRING_SECURITY_CONTEXT=SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=BoardPrincipal[username=unoTest, password=pw, authorities=[ROLE_USER], email=uno-test@gmail.com, nickname=uno-test, memo=test-memo], Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_USER]]]}
@@ -279,7 +279,7 @@ MockHttpServletResponse:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 23. 오후 2:02:26</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 30. 오후 5:16:32</p>
 </div>
 </div>
 </body>

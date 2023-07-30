@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.002s</div>
+<div class="counter">0.001s</div>
 <p>duration</p>
 </div>
 </td>
@@ -256,7 +256,7 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 </thead>
 <tr>
 <td class="failures">givenNothing_whenRequestingRootPage_thenRedirectsToArticlesPage()</td>
-<td class="failures">0.002s</td>
+<td class="failures">0.001s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -264,8 +264,8 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>2023-07-23T14:02:18.314+09:00  INFO 4645 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-2023-07-23T14:02:18.318+09:00  INFO 4645 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.MainControllerTest
+<pre>2023-07-30T17:16:23.857+09:00  INFO 3152 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.marathon.board.controller.MainControllerTest]: MainControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2023-07-30T17:16:23.864+09:00  INFO 3152 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.marathon.board.BoardApplication for test class com.marathon.board.controller.MainControllerTest
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -275,13 +275,13 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.4)
 
-2023-07-23T14:02:18.357+09:00  INFO 4645 --- [    Test worker] c.m.board.controller.MainControllerTest  : Starting MainControllerTest using Java 17.0.6 with PID 4645 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
-2023-07-23T14:02:18.357+09:00  INFO 4645 --- [    Test worker] c.m.board.controller.MainControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2023-07-23T14:02:18.573+09:00  WARN 4645 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/marathon/board/config/SecurityConfig.class]: Unsatisfied dependency expressed through method 'securityFilterChain' parameter 0: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'userDetailsService' defined in class path resource [com/marathon/board/config/SecurityConfig.class]: Unsatisfied dependency expressed through method 'userDetailsService' parameter 0: No qualifying bean of type 'com.marathon.board.repository.UserAccountRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2023-07-23T14:02:18.574+09:00  INFO 4645 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
+2023-07-30T17:16:23.911+09:00  INFO 3152 --- [    Test worker] c.m.board.controller.MainControllerTest  : Starting MainControllerTest using Java 17.0.6 with PID 3152 (started by jeonghokang in /Users/jeonghokang/IdeaProjects/marathon-project-board2)
+2023-07-30T17:16:23.911+09:00  INFO 3152 --- [    Test worker] c.m.board.controller.MainControllerTest  : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2023-07-30T17:16:24.182+09:00  WARN 3152 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityFilterChain' defined in class path resource [com/marathon/board/config/SecurityConfig.class]: Unsatisfied dependency expressed through method 'securityFilterChain' parameter 0: Error creating bean with name 'org.springframework.security.config.annotation.web.configuration.HttpSecurityConfiguration.httpSecurity' defined in class path resource [org/springframework/security/config/annotation/web/configuration/HttpSecurityConfiguration.class]: Failed to instantiate [org.springframework.security.config.annotation.web.builders.HttpSecurity]: Factory method 'httpSecurity' threw exception with message: Error creating bean with name 'userDetailsService' defined in class path resource [com/marathon/board/config/SecurityConfig.class]: Unsatisfied dependency expressed through method 'userDetailsService' parameter 0: No qualifying bean of type 'com.marathon.board.repository.UserAccountRepository' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2023-07-30T17:16:24.184+09:00  INFO 3152 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2023-07-23T14:02:18.576+09:00 ERROR 4645 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
+2023-07-30T17:16:24.187+09:00 ERROR 3152 --- [    Test worker] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
 ***************************
 APPLICATION FAILED TO START
@@ -346,7 +346,7 @@ Unconditional classes:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 23. 오후 2:02:26</p>
+<a href="http://www.gradle.org">Gradle 7.6.1</a> at 2023. 7. 30. 오후 5:16:32</p>
 </div>
 </div>
 </body>
