@@ -52,8 +52,16 @@ public class ArticleCommentService {
         try{
             Article article = articleRepository.getReferenceById(dto.articleId());
             UserAccount userAccount = userAccountRepository.getReferenceById(dto.userAccountDto().userId());
-            //댓글 생성시 게시글ID와 작성자 정보도 필요
-            articleCommentRepository.save(dto.toEntity(article, userAccount));
+            ArticleComment articleComment =  dto.toEntity(article, userAccount);
+
+            if (dto.parentCommentId() != null) { // 부모댓글ID가 있다면
+                ArticleComment parentComment = articleCommentRepository.getReferenceById(dto.parentCommentId());
+                parentComment.addChildComment(articleComment);
+            }else { //부모댓글ID가 없다면
+                //댓글 생성시 게시글ID와 작성자 정보도 필요
+                articleCommentRepository.save(articleComment);
+            }
+
         }catch(EntityNotFoundException e){
             //log.warn("댓글 저장 실패. 댓글의 게시글을 찾을 수 없습니다 - dto: {}\", dto");
             e.printStackTrace();
