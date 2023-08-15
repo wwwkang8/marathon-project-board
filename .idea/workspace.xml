@@ -7,32 +7,9 @@
     <list default="true" id="68894cb4-2836-40a8-9bba-213e0bf77f7b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/controller/ArticleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/ArticleCommentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/ArticleCommentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/request/ArticleCommentRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/request/ArticleCommentRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/response/ArticleCommentResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/response/ArticleCommentResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/response/ArticleWithCommentsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/dto/response/ArticleWithCommentsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleCommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleCommentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/controller/ArticleCommentControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/controller/ArticleCommentControllerTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/repository/JpaRepositoryTest$TestJpaConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/repository/JpaRepositoryTest$TestJpaConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/repository/JpaRepositoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/repository/JpaRepositoryTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/service/ArticleCommentServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/service/ArticleCommentServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/service/ArticleServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/marathon/board/service/ArticleServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.repository.JpaRepositoryTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.repository.JpaRepositoryTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.repository.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.repository.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.repository.JpaRepositoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.repository.JpaRepositoryTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marathon/board/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marathon/board/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marathon/board/dto/response/ArticleCommentResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marathon/board/dto/response/ArticleCommentResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marathon/board/dto/response/ArticleWithCommentsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marathon/board/dto/response/ArticleWithCommentsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marathon/board/service/ArticleCommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marathon/board/service/ArticleCommentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/marathon/board/controller/ArticleCommentControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/marathon/board/controller/ArticleCommentControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/marathon/board/service/ArticleCommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/marathon/board/service/ArticleCommentServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/marathon/board/service/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/marathon/board/service/ArticleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.th.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.th.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +94,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView">
+  <component name="RunManager" selected="Spring Boot.BoardApplication">
     <configuration name="ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
