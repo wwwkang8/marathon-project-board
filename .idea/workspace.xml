@@ -6,48 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="68894cb4-2836-40a8-9bba-213e0bf77f7b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleService$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/service/ArticleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.BoardApplicationTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.BoardApplicationTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.ArticleCommentControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.ArticleCommentControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.ArticleControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.ArticleControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.AuthControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.AuthControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.DataRestTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.DataRestTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.MainControllerTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.controller.MainControllerTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.repository.JpaRepositoryTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.repository.JpaRepositoryTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.ArticleCommentServiceTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.ArticleCommentServiceTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.ArticleServiceTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.ArticleServiceTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.PaginationServiceTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.service.PaginationServiceTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.util.FormDataEncoderTest.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.marathon.board.util.FormDataEncoderTest.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.controller.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.controller.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.repository.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.repository.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.service.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.service.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.util.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.marathon.board.util.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.BoardApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.BoardApplicationTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.ArticleCommentControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.ArticleCommentControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.ArticleControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.ArticleControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.AuthControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.AuthControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.DataRestTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.DataRestTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.MainControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.controller.MainControllerTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.repository.JpaRepositoryTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.repository.JpaRepositoryTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.ArticleCommentServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.ArticleCommentServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.ArticleServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.ArticleServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.PaginationServiceTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.service.PaginationServiceTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.util.FormDataEncoderTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.marathon.board.util.FormDataEncoderTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/controller/ArticleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/marathon/board/controller/ArticleController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/marathon/board/service/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/marathon/board/service/ArticleService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.th.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/detail.th.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/form.th.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/form.th.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/articles/index.th.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/articles/index.th.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +73,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jeonghokang/IdeaProjects/marathon-project-board2/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/jeonghokang/IdeaProjects/marathon-project-board2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -133,7 +95,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.BoardApplication">
-    <configuration name="HashtagServiceTest.givenContent_whenParsing_thenReturnsUniqueHashtagNames" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -146,7 +108,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.marathon.board.service.HashtagServiceTest.givenContent_whenParsing_thenReturnsUniqueHashtagNames&quot;" />
+            <option value="&quot;com.marathon.board.controller.ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +118,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="HashtagServiceTest.givenHashtagNames_whenFindingHashtags_thenReturnsHashtagSet" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="ArticleServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +131,53 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.marathon.board.service.HashtagServiceTest.givenHashtagNames_whenFindingHashtags_thenReturnsHashtagSet&quot;" />
+            <option value="&quot;com.marathon.board.service.ArticleServiceTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ArticleServiceTest.givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.marathon.board.service.ArticleServiceTest.givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="ArticleWithCommentsResponseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.marathon.board.dto.ArticleWithCommentsResponseTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -209,9 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ArticleControllerTest.givenAuthorizedUser_whenRequestingArticleView_thenReturnsArticleView" />
         <item itemvalue="Gradle.Tests in 'board.test'" />
-        <item itemvalue="Gradle.HashtagServiceTest.givenHashtagNames_whenFindingHashtags_thenReturnsHashtagSet" />
-        <item itemvalue="Gradle.HashtagServiceTest.givenContent_whenParsing_thenReturnsUniqueHashtagNames" />
+        <item itemvalue="Gradle.ArticleServiceTest" />
+        <item itemvalue="Gradle.ArticleServiceTest.givenModifiedArticleInfo_whenUpdatingArticle_thenUpdatesArticle" />
+        <item itemvalue="Gradle.ArticleWithCommentsResponseTest" />
       </list>
     </recent_temporary>
   </component>
@@ -238,11 +248,29 @@
       <workItem from="1690033805100" duration="1705000" />
       <workItem from="1690079084624" duration="5923000" />
       <workItem from="1690094841772" duration="115000" />
-      <workItem from="1690111930518" duration="4166000" />
+      <workItem from="1690111930518" duration="4531000" />
+      <workItem from="1690690444794" duration="54000" />
+      <workItem from="1690703183358" duration="1100000" />
+      <workItem from="1691233818321" duration="35000" />
+      <workItem from="1691236280762" duration="1888000" />
+      <workItem from="1691289345449" duration="63000" />
+      <workItem from="1691292127563" duration="9178000" />
+      <workItem from="1691323690917" duration="3459000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

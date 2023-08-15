@@ -164,7 +164,7 @@ class ArticleServiceTest {
         // Then
         assertThat(t)
             .isInstanceOf(EntityNotFoundException.class)
-            .hasMessage("게시글이 없습니다 - articleId: " + articleId);
+            .hasMessage("게시글이 없습니다 - articleId : " + articleId);
         then(articleRepository).should().findById(articleId);
     }
 
@@ -256,7 +256,7 @@ class ArticleServiceTest {
             .hasFieldOrPropertyWithValue("content", dto.content())
             //.extracting("hashtags", as(InstanceOfAssertFactories.COLLECTION))
             //.hasSize(1)
-            .extracting("hashtagName");
+            .extracting("hashtags");
             //.containsExactly("springboot");
         then(articleRepository).should().getReferenceById(dto.id());
         then(userAccountRepository).should().getReferenceById(dto.userAccountDto().userId());

@@ -2,10 +2,15 @@ package com.marathon.board.dto.response;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Comparator;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.LinkedHashSet;
 
+import com.marathon.board.dto.ArticleCommentDto;
 import com.marathon.board.dto.ArticleWithCommentsDto;
 import com.marathon.board.dto.HashtagDto;
 
@@ -18,7 +23,7 @@ public record ArticleWithCommentsResponse(
     String email,
     String nickname,
     String userId,
-    Set<ArticleCommentResponse> articleCommentResponse
+    Set<ArticleCommentResponse> articleCommentsResponse
 ) implements Serializable {
 
     /**
@@ -54,10 +59,35 @@ public record ArticleWithCommentsResponse(
             dto.userAccountDto().email(),
             nickname,
             dto.userAccountDto().userId(),
-            dto.articleCommentDtos().stream()
-                .map(ArticleCommentResponse::from)
-                .collect(Collectors.toCollection(LinkedHashSet::new))
+            organizeChildComments(dto.articleCommentDtos())
         );
+    }
+
+    private static Set<ArticleCommentResponse> organizeChildComments(Set<ArticleCommentDto> dtos) {
+
+        /**
+         * 댓글이 대댓글과 섞여있다.
+         * 댓글과 대댓글, 댓글의 레벨을 구분해서 추출하기 위한 방법임.
+         * */
+
+        Map<Long, ArticleCommentResponse> map = dtos.stream()
+            .map(ArticleCommentResponse::from)
+            .collect(Collectors.toMap(ArticleCommentResponse::id, Function.identity()));
+        map.values().stream()
+            .filter(ArticleCommentResponse::hasParentComment)
+            .forEach(comment -> {
+                ArticleCommentResponse parentComment = map.get(comment.parentCommentId());
+                parentComment.childComments().add(comment);
+            });
+
+        /** ! 느낌표가 의미하는 것은 자식댓글인지 확인하는 것. */
+        return map.values().stream()
+            .filter(comment -> !comment.hasParentComment())
+            .collect(Collectors.toCollection(() ->
+                new TreeSet<>(Comparator.comparing(ArticleCommentResponse::createdAt) //생성시각 내림차순, id 오름차순
+                    .reversed()
+                    .thenComparingLong(ArticleCommentResponse::id)
+                )));
     }
 
 }
